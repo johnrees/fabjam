@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/libgit2/rugged.git
-  revision: de19d5fb25fc83c6b88fab0ef5cd1e09c829e0a8
-  branch: development
-  submodules: true
-  specs:
-    rugged (0.19.0)
-
-GIT
   remote: git://github.com/norman/friendly_id.git
   revision: 57baa3549a5d5b1ee0cc9b6a803c59d9de0e7d59
   specs:
@@ -221,7 +213,6 @@ DEPENDENCIES
   pg
   rails (= 4.1.0)
   rspec-rails
-  rugged!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   shoulda-matchers

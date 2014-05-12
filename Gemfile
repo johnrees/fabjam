@@ -20,7 +20,7 @@ gem 'friendly_id', github: 'norman/friendly_id'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'rugged', github: 'libgit2/rugged', branch: 'development', submodules: true
+# gem 'rugged', github: 'libgit2/rugged', branch: 'development', submodules: true
 gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
