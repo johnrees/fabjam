@@ -1,0 +1,8 @@
+%ul.breadcrumbs
+  %li= link_to "Home", root_path
+  %li= link_to "Projects", projects_path
+  %li= link_to @project.year, projects_path(year: @project.year)
+  %li= link_to @project, @project
+  %li.current= link_to 'Edit', edit_project_path(@project)
+
+= render "form", project: @project

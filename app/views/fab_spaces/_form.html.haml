@@ -1,0 +1,10 @@
+.row
+  .columns.large-12
+    = simple_form_for fab_space do |f|
+      %fieldset
+        %legend Fab Space Details
+        = f.input :name
+        = f.input :description
+        = f.input :lat
+        = f.input :lng
+      = f.submit class: 'button'

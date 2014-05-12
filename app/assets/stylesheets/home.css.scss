@@ -1,0 +1,33 @@
+a, h1, h2, h3, h4, input, textarea, button {
+  font-family: Droid Sans !important;
+}
+h1,h2,h3,h4 {
+  font-weight: bold;
+}
+.counts li {
+  .inner {
+    margin: 10px;
+    padding: 20px 10px;
+    font-size: 1.2em;
+    a {
+      color: #111;
+      font-family: Droid Sans;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+ul#slider li {
+  min-height: 400px;
+  height: 100%;
+  display: block;
+  * {
+    color: #FFF;
+    text-align: center;
+  }
+}
+
+.orbit-bullets-container {
+  margin-top: -40px !important;
+}

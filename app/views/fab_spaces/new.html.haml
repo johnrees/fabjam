@@ -1,0 +1,6 @@
+%ul.breadcrumbs
+  %li= link_to "Home", root_path
+  %li= link_to 'Fab Spaces', fab_spaces_path
+  %li.current= link_to 'New Fab Space', new_fab_space_path
+
+= render "form", fab_space: @fab_space

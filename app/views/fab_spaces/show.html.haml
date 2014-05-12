@@ -1,0 +1,18 @@
+%ul.breadcrumbs
+  %li= link_to "Home", root_path
+  %li= link_to 'Fab Spaces', fab_spaces_path
+  %li.current= link_to @fab_space, @fab_space
+
+.row
+  .columns.large-12
+    %h1= @fab_space
+    = link_to "Edit", edit_fab_space_path(@fab_space), class: 'button'
+
+    .fab-space-description= simple_format @fab_space.description
+
+.stripe
+  .row
+    .columns.large-12
+      %h3 Current Projects
+      %ul.large-block-grid-4.fab-space-projects= render @fab_space.projects
+

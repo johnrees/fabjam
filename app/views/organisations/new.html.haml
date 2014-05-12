@@ -1,0 +1,16 @@
+= simple_form_for @organisation do |f|
+
+  %fieldset
+    %legend Organisation Details
+    = f.input :name
+    = f.input :description
+    = f.input :url
+
+  %fieldset
+    %legend Payment Details
+    %p We ask you to pay €500 to support the Fab Lab that you use. You will only be charged if your organisation is accepted.
+
+    = label_tag :credit_card_number
+    = text_field_tag :credit_card_number
+
+  = f.submit

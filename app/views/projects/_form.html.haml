@@ -1,0 +1,10 @@
+.row
+  .columns.large-12
+    = simple_form_for project do |f|
+      %fieldset
+        %legend Project Details
+        = f.input :name, label: 'Project Name'
+        = f.association :fab_space
+        = f.input :cover_image
+        = f.input :description
+      = f.submit class: 'button'

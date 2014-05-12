@@ -1,0 +1,23 @@
+%ul.breadcrumbs
+  %li= link_to "Home", root_path
+  %li= link_to "Projects", projects_path
+  %li.current= link_to (params[:year] || 2014), projects_path
+
+.row
+  .columns.large-5
+    %h1 Projects
+  .columns.large-7
+    %ul.button-group{style: 'float: right'}
+      %li= link_to "2014 (Current Projects)", projects_path(year: 2014), class: 'button'
+      %li= link_to "2013", projects_path(year: 2013), class: 'button'
+  .columns.large-12
+    .panel
+      - if params[:year] == '2014'
+        %p This year the theme is consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+      - else
+        %p Last year the theme was dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+
+    %ul.large-block-grid-4= render @projects
+
+    - if can? :create, Project
+      = link_to "Start a Project", new_project_path, class: 'button'

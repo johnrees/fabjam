@@ -1,0 +1,19 @@
+%ul.breadcrumbs
+  %li= link_to "Home", root_path
+  %li= link_to "Projects", projects_path
+  %li= link_to @project.year, projects_path(year: @project.year)
+  %li.current= link_to @project, @project
+
+.row
+  .columns.large-5
+    %h1= @project
+  .columns.large-7
+    %ul.button-group{style: 'float: right'}
+      - if can? :update, @project
+        %li= link_to "Edit Project", edit_project_path(@project), class: 'button'
+      - if can? :destroy, @project
+        %li= link_to "Delete Project", project_path(@project), method: :delete, confirm: 'Are you sure you want to delete this project?', class: 'button alert'
+  .columns.large-12
+    .project-fab-space= link_to @project.fab_space, @project.fab_space
+    = simple_format(@project.description)
+    = image_tag @project.cover_image

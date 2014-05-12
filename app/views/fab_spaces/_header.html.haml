@@ -1,0 +1,11 @@
+%ul.breadcrumbs
+  %li= link_to "Home", root_path
+  %li.current= link_to 'Fab Spaces', fab_spaces_path
+
+.row
+  .columns.large-12
+    %h1 Fab Spaces
+
+    %ul.button-group
+      %li= link_to "List View", fab_spaces_path, class: 'button'
+      %li= link_to "Map View", map_fab_spaces_path, class: 'button'

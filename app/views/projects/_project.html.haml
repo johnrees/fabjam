@@ -1,0 +1,6 @@
+= content_tag_for :li, project do
+  .inner
+    .project-thumbnail= image_tag project.cover_image
+    .project-name= link_to project, project
+    .project-fab-space= link_to project.fab_space, project.fab_space
+    .project-description= simple_format project.description
