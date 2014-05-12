@@ -1,8 +1,8 @@
 .container#header
   %ul#slider{data: {orbit: true}}
-    %li{style: 'background-image: url(/assets/header-background.jpg)'}
+    %li{style: "background-image: url(#{image_path 'header-background.jpg'})"}
       = image_tag "fabjam.png", style: 'margin: 40px auto;'
-    %li{style: 'background-image: url(/assets/slides/video.jpg)'}
+    %li{style: "background-image: url(#{image_path 'slides/video.jpg'})"}
       %h1 <a href="#" data-reveal-id="myModal">Watch the video from last year</a>
 
 
