@@ -6,4 +6,5 @@
         = content_tag_for :li, fab_space do
           = link_to fab_space, fab_space
 
+    - if can? :create, FabSpace
       = link_to "Add your Fab Space", new_fab_space_path, class: "button #{'disabled' unless can? :create, FabSpace}"
