@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :projects
 
-  resources :fab_spaces do
+  resources :fab_spaces, path: 'spaces' do
     collection do
       get :map
     end
