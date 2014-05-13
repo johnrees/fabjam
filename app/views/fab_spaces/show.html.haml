@@ -6,11 +6,13 @@
 .row
   .columns.large-12
     %h1= @fab_space
-    = image_tag "http://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&size=200x200&maptype=roadmap&sensor=false"
-    - if can? :edit, @fab_space
-      = link_to "Edit", edit_fab_space_path(@fab_space), class: 'button'
+    .row{style: 'margin-bottom: 20px'}
+      .columns.large-2= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&size=140x140&maptype=roadmap&sensor=false"
+      .columns.large-10
+        - if can? :edit, @fab_space
+          = link_to "Edit", edit_fab_space_path(@fab_space), class: 'button'
 
-    .fab-space-description= simple_format @fab_space.description
+        .fab-space-description= simple_format @fab_space.description
 
 .stripe
   .row
