@@ -27,6 +27,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.breadcrumbs, .panel {
+  border: none;
+  background: #F6f6f6;
+}
+
+.panel {
+  background-color: #FFFF87;
+  padding: 12px 15px;
+  p { font-size: 0.95em; }
+}
+
 .container {
   // padding: 40px 0;
 }
