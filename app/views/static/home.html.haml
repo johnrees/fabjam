@@ -60,11 +60,13 @@
         - @fab_spaces.limit(4).each do |fab_space|
           = content_tag_for :li, fab_space do
             = link_to fab_space, fab_space
-
 .row
   .columns.large-12
+
     %ul.large-block-grid-4
       %li= image_tag "partners/fab10.png"
       %li= image_tag "partners/nod-a.png"
       %li= image_tag "partners/ouish.png"
       %li= image_tag "partners/tinktank.png"
+
+.stripe#renault= image_tag "partners/renault.png"
