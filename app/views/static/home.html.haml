@@ -25,22 +25,26 @@
     .flex-video
       <iframe src="//player.vimeo.com/video/65548332" width="500" height="375" webkitallowfullscreen mozallowfullscreen allowfullscreen border="0" style="border: none;"></iframe>
 
-.row
+.row.collapse
   .columns.large-12
-    %ul.large-block-grid-3.counts
+    %ul.large-block-grid-4.counts.small-block-grid-2
       %li
         .inner
           = fa_icon "square"
-          = link_to "1 Theme", about_path
+          = link_to "<span class='count'>1</span> Day".html_safe, about_path
+      %li
+        .inner
+          = fa_icon "square"
+          = link_to "<span class='count'>1</span> Theme".html_safe, about_path
       %li
         .inner
           = fa_icon "briefcase"
-          = link_to pluralize(Project.count, "Project"), projects_path
+          = link_to "<span class='count'>#{Project.count}</span> Projects".html_safe, projects_path
 
       %li
         .inner
           = fa_icon "building"
-          = link_to pluralize(FabSpace.count, "Fab Space"), fab_spaces_path
+          = link_to "<span class='count'>#{FabSpace.count}</span> Fab Spaces".html_safe, fab_spaces_path
 
 
 
