@@ -23,8 +23,36 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arvo;
+  font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
+  background: url('http://fabjam.org/wp-content/uploads/2014/05/FabJam_site_tile.jpg');
+}
+#main .columns {
+  background: #FFF;
+}
+
+#header-image {
+  margin: 0 auto -70px;
+  position: relative;
+  z-index: 10;
+}
+
+.about {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  padding: 10px 10px 10px 50px;
+  color: #FFF;
+  clear: both !important;
+  float: none;
+  text-transform: uppercase;
+  background: #FF00FF;
+  &.disabled {
+    background: #B9B9B9;
+  }
 }
 
 .breadcrumbs, .panel {
