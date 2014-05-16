@@ -20,12 +20,19 @@
 
  */
 
+
  * { box-sizing: border-box }
 footer {
   h1,h2,h3 {
     color: #FFF;
     text-transform: uppercase;
   }
+}
+
+.watch {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 h3 {
   color: #B9B9B9;
@@ -52,7 +59,7 @@ h3 {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 70px 0 0 0;
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
   background: fixed url('http://fabjam.org/wp-content/uploads/2014/05/FabJam_site_tile.jpg');
@@ -65,6 +72,11 @@ body {
   margin: 0 auto -70px;
   position: relative;
   z-index: 10;
+}
+
+.view-all {
+  float: right;
+  text-transform: uppercase;
 }
 
 .about {

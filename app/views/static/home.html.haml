@@ -1,10 +1,3 @@
--# .container#header
--#   %ul#slider{data: {orbit: true}}
--#     %li{style: "background-image: url(#{image_path 'header-background.jpg'})"}
--#       = image_tag "fabjam.png", style: 'margin: 40px auto;'
--#     %li{style: "background-image: url(#{image_path 'slides/video.jpg'})"}
--#       %h1 <a href="#" data-reveal-id="myModal">Watch the video from last year</a>
-
 .row
   = image_tag "header.png", id: 'header-image'
   .columns.large-12
@@ -12,7 +5,7 @@
       %h2 JUNE 14ᵀᴴ 2014
       %p fabjam is a creative sprint that brings together fabspaces from all over the world for 24h of fun and digital fabrications around one theme. It aims to connect fabspaces together and fabspaces to their local community of users and companies. #{link_to "find out more", about_path}
 
-      %p= link_to "Watch Last Year's Video", "#"
+      %p= link_to "Watch Last Year's Video", "#", class: 'watch'
 
     .title Join Us
 
@@ -27,85 +20,31 @@
         .register
           %span Register as a Supporter
 
-    .title Latest Labs
     #latest-labs
-      %ul.large-block-grid-3
-        - 3.times do
-          %li
-            .register
+      .title Latest Labs
+      %ul.large-block-grid-3= render @fab_spaces
+      = link_to "View All Labs >", fab_spaces_path, class: 'view-all'
+
     .title.disabled Latest Projects
     %h3 Coming Soon
+
     .title Latest News
-    #latest-news
-      %ul.large-block-grid-3
-        - 3.times do
-          %li
-            .register
+    %ul#latest-news.large-block-grid-3= render @posts
+
     .title Organisation
     %ul.large-block-grid-3
       %li= image_tag "partners/nod-a.png"
-
+      %li= image_tag "partners/ouishare.png"
       %li= image_tag "partners/tinktank.png"
+
     .title Partners
     %ul.large-block-grid-5
       %li= image_tag "partners/fab10.png"
       %li= image_tag "partners/ouish.png"
+      %li= image_tag "partners/oshwa.jpg"
+      %li= image_tag "partners/fabfoundation.png"
+      %li= image_tag "partners/fablabsio.jpg"
+
     .title Powered By
-
-    -#   %p FabJam is back for another year!
-    -#   %p Join many fabspaces across the world for a day of fun and creativity, using digital fabrication.
-
-
-    -#   %p As a fablab, a makerspace, a hackerspace or any other fabspace, it’s hard to find time to talk to other spaces and to work on projects together… That’s exactly what FabJam is! 24 hours when all the fabspaces that want to participate work on the same theme, discussing with each other all day long…
-    -# .columns.large-12
-    -#   %p This year, FabJam is connected to OuiShare Fest and Fab10, two great events that connect the sharing / making communities. The final theme will be announced during OuiShare Fest and some projects will be presented during Fab10 in Barcelona and included in the Fab10 awards!
-
-
--#     - unless current_user
--#       = link_to "Register Now", new_user_registration_path, class: 'button large expand'
-
--#   #myModal.reveal-modal{data: {reveal: true}}
--#     .flex-video
--#       <iframe src="//player.vimeo.com/video/65548332" width="500" height="375" webkitallowfullscreen mozallowfullscreen allowfullscreen border="0" style="border: none;"></iframe>
-
--# .row.collapse
--#   .columns.large-12
--#     %ul.large-block-grid-4.counts.small-block-grid-2
--#       %li
--#         .inner
--#           = fa_icon "square"
--#           = link_to "<span class='count'>1</span> Day".html_safe, about_path
--#       %li
--#         .inner
--#           = fa_icon "square"
--#           = link_to "<span class='count'>1</span> Theme".html_safe, about_path
--#       %li
--#         .inner
--#           = fa_icon "briefcase"
--#           = link_to "<span class='count'>#{Project.count}</span> Projects".html_safe, projects_path
-
--#       %li
--#         .inner
--#           = fa_icon "building"
--#           = link_to "<span class='count'>#{FabSpace.count}</span> Fab Spaces".html_safe, fab_spaces_path
-
-
-
--# .stripe
--#   .row
--#     .columns.large-12
-
--#       %h4= link_to "This Year's Projects", projects_path
--#       %ul.large-block-grid-4
--#         = render @projects.limit(4)
-
--# .stripe.fab-spaces
--#   .row
--#     .columns.large-12
--#       %h4= link_to "Fab Spaces", fab_spaces_path
--#       %ul
--#         - @fab_spaces.limit(4).each do |fab_space|
--#           = content_tag_for :li, fab_space do
--#             = link_to fab_space, fab_space
 
 .stripe#renault= image_tag "partners/renault.png"

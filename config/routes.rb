@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :posts, path: 'news'
+
   resources :organisations
 
   get 'me', to: 'me#dashboard', as: 'me'

@@ -9,7 +9,8 @@
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   %body
-    .contain-to-grid
+
+    .contain-to-grid.fixed
       %nav.top-bar{"data-topbar" => ""}
         %ul.title-area
           %li.name
@@ -27,7 +28,7 @@
                 %li= link_to "List", fab_spaces_path
                 %li= link_to "Map", map_fab_spaces_path
             %li= link_to "Projects", projects_path
-            %li= link_to "News", about_path
+            %li= link_to "News", posts_path
             -# %li.has-form
             -#   .row.collapse
             -#     .large-12.columns

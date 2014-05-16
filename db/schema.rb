@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511223936) do
+ActiveRecord::Schema.define(version: 20140516092103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 20140511223936) do
   end
 
   add_index "organisations", ["creator_id"], name: "index_organisations_on_creator_id", using: :btree
+
+  create_table "posts", force: true do |t|
+    t.integer  "author_id"
+    t.string   "name"
+    t.string   "slug"
+    t.text     "body"
+    t.string   "image_url"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.integer  "creator_id"
