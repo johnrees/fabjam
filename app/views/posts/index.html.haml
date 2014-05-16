@@ -1,7 +1,7 @@
 .row
   .columns.large-12
     %h1 News
-    = render @posts
+    %ul= render @posts
 
     - if can? :create, Post
       = link_to "New Post", new_post_path, class: 'button'

@@ -4,11 +4,14 @@
     %h1 Hello #{current_user.email}
     %p What would you like to do?
 
-    %ul.button-group
-      %li= link_to "Start a Project", new_project_path, class: 'button'
-      %li= link_to "Join a Project", projects_path, class: 'button'
+    %ul
       %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
-      %li= link_to "Add an Organisation", new_organisation_path, class: 'button'
       %li= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button alert'
+
+      %li
+        %h5 Coming Soon...
+      %li= link_to "Start a Project", '#', class: 'button disabled'
+      %li= link_to "Join a Project", '#', class: 'button disabled'
+      %li= link_to "Add an Organisation", '#', class: 'button disabled'
     - Organisation.all.each do |organisation|
       = link_to organisation, organisation
