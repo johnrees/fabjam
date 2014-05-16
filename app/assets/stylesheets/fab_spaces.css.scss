@@ -1,1 +1,49 @@
 #map { height: 500px; }
+#latest-labs {
+  .register {
+    padding: 10px;
+  }
+  a.button {
+    margin-top: 20px;
+  }
+}
+
+li.fab_space {
+  table {
+    font-size: 2em;
+    td {
+      font-size: 0.6em;
+      line-height: 1em;
+    }
+    td,th {
+      padding-bottom: 10px;
+    }
+  }
+  th {
+    width: 40px;
+  }
+  th img {
+    height: 31px;
+    margin: 0;
+  }
+  table, tr, td, th {
+    vertical-align: top;
+    border: none;
+    background: none !important;
+    margin: 0;
+    padding: 0;
+  }
+  td img {
+    margin: 0;
+    height: 100px;
+    width: 100px;
+  }
+  table {
+    // margin: 10px;
+    width: 100%;
+    border-collapse: none;
+  }
+  td.thumb {
+    width: 100px;
+  }
+}

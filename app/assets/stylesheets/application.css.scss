@@ -20,6 +20,11 @@
 
  */
 
+#join-us {
+  .disabled span {
+    background: #CCCCCC;
+  }
+}
 
  * { box-sizing: border-box }
 footer {
@@ -42,18 +47,30 @@ h3 {
   text-transform: uppercase;
 }
 
+.button, .register span {
+  border-radius: 4px;
+  text-transform: uppercase;
+  padding: 6px 8px;
+}
+
 .register {
   background: #F2F2F2;
   height: 300px;
   border-radius: 4px;
   position: relative;
+  overflow: hidden;
+  img {
+    margin: 30px auto;
+    display: block;
+  }
   span {
     background: #3FA9F5;
-    padding: 10px;
+
     display: block;
     position: absolute;
+    left: 50%;
     bottom: 0;
-    margin: 10px auto;
+    margin: 10px -45%;
     color: #FFF;
     text-align: center;
     width: 90%;
@@ -82,6 +99,7 @@ body {
 }
 
 .view-all {
+  font-weight: bold;
   float: right;
   text-transform: uppercase;
 }
@@ -92,6 +110,7 @@ body {
 }
 
 .title {
+  margin-left: -17px;
   display: inline-block;
   padding: 10px 10px 10px 50px;
   margin-bottom: 20px;

@@ -11,45 +11,54 @@
       %p <a href="#" data-reveal-id="myModal" class="watch">Watch Last Year's Video</a>
 
     - unless current_user
-      .title Join Us
-      %ul.large-block-grid-3
-        %li
-          .register
-            %span Register as a Fab Space
-        %li
-          .register
-            %span Register as a Participant
-        %li
-          .register
-            %span Register as a Supporter
+      #join-us
+        .title Join Us
+        %ul.large-block-grid-3
+          %li
+            = link_to new_user_registration_path do
+              .register
+                = image_tag "icons/house.png"
+                %span Register as a Fab Space
+          %li.disabled
+            .register
+              = image_tag "icons/man.png"
+              %span Register as a Participant
+          %li.disabled
+            .register
+              = image_tag "icons/building.png"
+              %span Register as a Supporter
 
     #latest-labs
       .title Latest Labs
       %ul.large-block-grid-3= render @fab_spaces
       = link_to "View All Labs >", fab_spaces_path, class: 'view-all'
 
-    .title.disabled Latest Projects
-    %h3 Coming Soon
+    #latest-projects
+      .title.disabled Latest Projects
+      %h3 Coming Soon
 
-    .title Latest News
-    %ul#latest-news.large-block-grid-3= render @posts
+    #latest-news
+      .title Latest News
+      %ul#latest-news.large-block-grid-3= render @posts
+      = link_to "View All News >", posts_path, class: 'view-all'
 
-    .title Organisation
-    %ul.large-block-grid-3
-      %li= image_tag "partners/nod-a.png"
-      %li= image_tag "partners/ouishare.png"
-      %li= image_tag "partners/tinktank.png"
+    #organisation
+      .title Organisation
+      %ul.large-block-grid-3
+        %li= image_tag "partners/nod-a.png"
+        %li= image_tag "partners/ouishare.png"
+        %li= image_tag "partners/tinktank.png"
 
-    .title Partners
-    %ul.large-block-grid-5
-      %li= image_tag "partners/fab10.png"
-      %li= image_tag "partners/ouish.png"
-      %li= image_tag "partners/oshwa.jpg"
-      %li= image_tag "partners/fabfoundation.png"
-      %li= image_tag "partners/fablabsio.jpg"
+    #partners
+      .title Partners
+      %ul.large-block-grid-5
+        %li= image_tag "partners/fab10.png"
+        %li= image_tag "partners/ouish.png"
+        %li= image_tag "partners/oshwa.jpg"
+        %li= image_tag "partners/fabfoundation.png"
+        %li= image_tag "partners/fablabsio.jpg"
 
     .title Powered By
-
 .stripe#renault= image_tag "partners/renault.png"
 
 #myModal.reveal-modal{data: {reveal: true}}

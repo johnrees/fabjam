@@ -1,4 +1,17 @@
 = content_tag_for :li, fab_space do
-  .register
-    = fab_space
-    = image_tag "http://placehold.it/100x100"
+  = link_to fab_space do
+    .register
+      %table
+        %tr
+          %th= image_tag "icons/house.png"
+          %td= fab_space
+          %td.thumb{rowspan: 3}= image_tag "http://placehold.it/100x100"
+        %tr
+          %th= image_tag "icons/man.png"
+          %td 8 / 15
+        %tr
+          %th= image_tag "icons/building.png"
+          %td 0 / 3
+        %tr
+          %td{colspan: 3}= link_to "Join", "#", class: 'button expand'
+
