@@ -109,7 +109,10 @@ body {
   text-align: center;
 }
 
-.title {
+.title, h4 {
+  font-family: Cuprum;
+  font-weight: bold;
+  font-size: 18px;
   margin-left: -17px;
   display: inline-block;
   padding: 10px 10px 10px 50px;
@@ -179,6 +182,7 @@ input#search-box {
 }
 
 footer {
+  border: none !important;
   a {
     line-height: 0.9em;
     font-size: 0.9em;
@@ -191,6 +195,7 @@ footer {
 }
 
 #renault {
+  border: none !important;
   // background: image-url("assets/stripe.png");
   height: 190px;
   padding: 10px 0;

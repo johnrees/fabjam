@@ -13,7 +13,7 @@
     - unless current_user
       #join-us
         .title Join Us
-        %ul.large-block-grid-3
+        %ul.large-block-grid-3.small-block-grid-1
           %li
             = link_to new_user_registration_path do
               .register
@@ -30,7 +30,7 @@
 
     #latest-labs
       .title Latest Labs
-      %ul.large-block-grid-3= render @fab_spaces
+      %ul.large-block-grid-3.medium-block-grid-2= render @fab_spaces
       = link_to "View All Labs >", fab_spaces_path, class: 'view-all'
 
     #latest-projects
@@ -44,14 +44,14 @@
 
     #organisation
       .title Organisation
-      %ul.large-block-grid-3
+      %ul.large-block-grid-3.medium-block-grid-3
         %li= image_tag "partners/nod-a.png"
         %li= image_tag "partners/ouishare.png"
         %li= image_tag "partners/tinktank.png"
 
     #partners
       .title Partners
-      %ul.large-block-grid-5
+      %ul.large-block-grid-5.medium-block-grid-5
         %li= image_tag "partners/fab10.png"
         %li= image_tag "partners/ouish.png"
         %li= image_tag "partners/oshwa.jpg"
