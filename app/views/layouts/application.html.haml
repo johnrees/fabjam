@@ -52,11 +52,20 @@
   %footer
     .stripe{style: 'background: #222'}
       .row
-        .columns.large-12
+        .columns.large-4
+          %h2 Resources:
           %ul
             %li= link_to "Home", root_path
             %li= link_to "About", about_path
             %li= link_to "Fab Spaces", fab_spaces_path
             %li= link_to "Projects", projects_path
-
-  = javascript_include_tag "application"
+        .columns.large-4.text-center
+          %h2 Previous Editions:
+          %ul
+            %li= link_to "2013", root_path
+        .columns.large-4.text-right
+          %h2 Contact Us:
+          %ul
+            %li= link_to "@thefabjam", root_path
+            %li= link_to "info@fabjam.org", about_path
+            %li= link_to "companies@fabjam.org", fab_spaces_path

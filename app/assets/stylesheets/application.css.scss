@@ -20,12 +20,42 @@
 
  */
 
+ * { box-sizing: border-box }
+footer {
+  h1,h2,h3 {
+    color: #FFF;
+    text-transform: uppercase;
+  }
+}
+h3 {
+  color: #B9B9B9;
+  text-transform: uppercase;
+}
+
+.register {
+  background: #F2F2F2;
+  height: 300px;
+  border-radius: 4px;
+  position: relative;
+  span {
+    background: #3FA9F5;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin: 10px auto;
+    color: #FFF;
+    text-align: center;
+    width: 90%;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
-  background: url('http://fabjam.org/wp-content/uploads/2014/05/FabJam_site_tile.jpg');
+  background: fixed url('http://fabjam.org/wp-content/uploads/2014/05/FabJam_site_tile.jpg');
 }
 #main .columns {
   background: #FFF;
@@ -45,9 +75,11 @@ body {
 .title {
   display: inline-block;
   padding: 10px 10px 10px 50px;
+  margin-bottom: 20px;
   color: #FFF;
   clear: both !important;
   float: none;
+  font-weight: bold;
   text-transform: uppercase;
   background: #FF00FF;
   &.disabled {
