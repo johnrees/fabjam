@@ -41,7 +41,7 @@ footer {
 
 .watch {
   font-family: BebasNeue;
-  font-size: 1.4em;
+  font-size: 1.8em;
   text-transform: uppercase;
   text-decoration: underline;
 }
@@ -58,7 +58,7 @@ h3 {
 
 .register {
   background: #F2F2F2;
-  height: 300px;
+  min-height: 260px;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
@@ -68,7 +68,7 @@ h3 {
   }
   span {
     background: #3FA9F5;
-
+    font-family: BebasNeue;
     display: block;
     position: absolute;
     left: 50%;
