@@ -8,7 +8,7 @@
         %br/
         It aims to connect fabspaces together and fabspaces<br/> to their local community of users and companies. #{link_to "find out more", about_path}
 
-      %p= link_to "Watch Last Year's Video", "#", class: 'watch'
+      %p <a href="#" data-reveal-id="myModal" class="watch">Watch Last Year's Video</a>
 
     - unless current_user
       .title Join Us
@@ -51,3 +51,7 @@
     .title Powered By
 
 .stripe#renault= image_tag "partners/renault.png"
+
+#myModal.reveal-modal{data: {reveal: true}}
+  .flex-video
+    <iframe src="//player.vimeo.com/video/65548332" width="500" height="375" webkitallowfullscreen mozallowfullscreen allowfullscreen border="0" style="border: none;"></iframe>
