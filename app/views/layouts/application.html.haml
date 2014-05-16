@@ -9,40 +9,40 @@
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   %body
-
-    .contain-to-grid.fixed
-      %nav.top-bar{"data-topbar" => ""}
-        %ul.title-area
-          %li.name
-            = link_to root_path do
-              = image_tag "fabjam_black.png", id: 'logo'
-          %li.toggle-topbar.menu-icon
-            %a{href: "#"}
-              %span Menu
-        %section.top-bar-section
-          %ul.left
-            %li= link_to "About", about_path
-            %li.has-dropdown
-              = link_to "Fabspaces", fab_spaces_path
-              %ul.dropdown
-                %li= link_to "List", fab_spaces_path
-                %li= link_to "Map", map_fab_spaces_path
-            %li= link_to "Projects", projects_path
-            %li= link_to "News", posts_path
-            -# %li.has-form
-            -#   .row.collapse
-            -#     .large-12.columns
-            -#       = text_field_tag :q, params[:q], placeholder: 'Search...', id: 'search-box'
-          %ul.right
-            - if current_user
+    %header
+      .contain-to-grid.fixed
+        %nav.top-bar{"data-topbar" => ""}
+          %ul.title-area
+            %li.name
+              = link_to root_path do
+                = image_tag "fabjam_black.png", id: 'logo'
+            %li.toggle-topbar.menu-icon
+              %a{href: "#"}
+                %span Menu
+          %section.top-bar-section
+            %ul.left
+              %li= link_to "About", about_path
               %li.has-dropdown
-                = link_to current_user, me_path
+                = link_to "Fabspaces", fab_spaces_path
                 %ul.dropdown
-                  %li= link_to "Dashboard", me_path
-                  %li= link_to "Sign out", destroy_user_session_path, method: :delete
-            - else
-              %li= link_to "Login", new_user_session_path
-              %li= link_to "Register", new_user_registration_path
+                  %li= link_to "List", fab_spaces_path
+                  %li= link_to "Map", map_fab_spaces_path
+              %li= link_to "Projects", projects_path
+              %li= link_to "News", posts_path
+              -# %li.has-form
+              -#   .row.collapse
+              -#     .large-12.columns
+              -#       = text_field_tag :q, params[:q], placeholder: 'Search...', id: 'search-box'
+            %ul.right
+              - if current_user
+                %li.has-dropdown
+                  = link_to current_user, me_path
+                  %ul.dropdown
+                    %li= link_to "Dashboard", me_path
+                    %li= link_to "Sign out", destroy_user_session_path, method: :delete
+              - else
+                %li= link_to "Login", new_user_session_path
+                %li= link_to "Register", new_user_registration_path
 
 
 
@@ -56,10 +56,9 @@
         .columns.large-4
           %h2 Resources:
           %ul
-            %li= link_to "Home", root_path
-            %li= link_to "About", about_path
-            %li= link_to "Fab Spaces", fab_spaces_path
-            %li= link_to "Projects", projects_path
+            %li= link_to "Google Group", '#'
+            %li= link_to "Schedule", '#'
+            %li= link_to "Press", '#'
         .columns.large-4.text-center
           -# %h2 Previous Editions:
           -# %ul
