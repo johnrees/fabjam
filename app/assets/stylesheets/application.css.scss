@@ -23,6 +23,9 @@
 
  * { box-sizing: border-box }
 footer {
+  .stripe {
+    background: #222;
+  }
   h1,h2,h3 {
     color: #FFF;
     text-transform: uppercase;
@@ -57,12 +60,16 @@ h3 {
   }
 }
 
+h1 {
+  text-transform: uppercase;
+}
+
 body {
   margin: 0;
   padding: 70px 0 0 0;
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
-  background: fixed url('http://fabjam.org/wp-content/uploads/2014/05/FabJam_site_tile.jpg');
+  background: url('http://fabjam.org/wp-content/uploads/2014/05/FabJam_site_tile.jpg');
 }
 #main .columns {
   background: #FFF;

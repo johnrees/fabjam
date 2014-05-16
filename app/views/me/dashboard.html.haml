@@ -9,6 +9,6 @@
       %li= link_to "Join a Project", projects_path, class: 'button'
       %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
       %li= link_to "Add an Organisation", new_organisation_path, class: 'button'
-
+      %li= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button alert'
     - Organisation.all.each do |organisation|
       = link_to organisation, organisation

@@ -3,22 +3,25 @@
   .columns.large-12
     .about
       %h2 JUNE 14ᵀᴴ 2014
-      %p fabjam is a creative sprint that brings together fabspaces from all over the world for 24h of fun and digital fabrications around one theme. It aims to connect fabspaces together and fabspaces to their local community of users and companies. #{link_to "find out more", about_path}
+      %p
+        fabjam is a creative sprint that brings together fabspaces from all over the world<br/> for 24h of fun and digital fabrications around one theme.
+        %br/
+        It aims to connect fabspaces together and fabspaces<br/> to their local community of users and companies. #{link_to "find out more", about_path}
 
       %p= link_to "Watch Last Year's Video", "#", class: 'watch'
 
-    .title Join Us
-
-    %ul.large-block-grid-3
-      %li
-        .register
-          %span Register as a Fab Space
-      %li
-        .register
-          %span Register as a Participant
-      %li
-        .register
-          %span Register as a Supporter
+    - unless current_user
+      .title Join Us
+      %ul.large-block-grid-3
+        %li
+          .register
+            %span Register as a Fab Space
+        %li
+          .register
+            %span Register as a Participant
+        %li
+          .register
+            %span Register as a Supporter
 
     #latest-labs
       .title Latest Labs

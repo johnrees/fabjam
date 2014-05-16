@@ -51,7 +51,7 @@
     #main= yield
 
   %footer
-    .stripe{style: 'background: #222'}
+    .stripe
       .row
         .columns.large-4
           %h2 Resources:
@@ -70,3 +70,5 @@
             %li= link_to "@thefabjam", root_path
             %li= link_to "info@fabjam.org", about_path
             %li= link_to "companies@fabjam.org", fab_spaces_path
+
+  = javascript_include_tag "application"

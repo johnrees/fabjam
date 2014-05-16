@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 gem 'stamp'
+gem 'redcarpet'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'haml-rails'
