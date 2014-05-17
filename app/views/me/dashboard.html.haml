@@ -6,6 +6,8 @@
 
     %ul
       %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
+      %li= link_to "Edit your Details", edit_user_registration_path, class: 'button'
+
       %li= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button alert'
 
       %li
@@ -13,3 +15,4 @@
       %li= link_to "Start a Project", '#', class: 'button disabled'
       %li= link_to "Join a Project", '#', class: 'button disabled'
       %li= link_to "Add an Organisation", '#', class: 'button disabled'
+
