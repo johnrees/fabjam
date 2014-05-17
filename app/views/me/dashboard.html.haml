@@ -5,7 +5,10 @@
     %p What would you like to do?
 
     %ul
-      %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
+      - if can? :create, Post
+        %li= link_to "Write a Blog Post", new_post_path, class: 'button'
+      - if can? :create, FabSpace
+        %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
       %li= link_to "Edit your Details", edit_user_registration_path, class: 'button'
 
       %li= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button alert'

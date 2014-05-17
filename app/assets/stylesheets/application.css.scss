@@ -16,6 +16,7 @@
  *= require_tree .
  *= require_self
  *= require leaflet
+ *= require redactor-rails
  *= require foundation_and_overrides
 
  */
@@ -210,6 +211,12 @@ footer {
   }
 }
 
+input[type=submit] {
+  background: #FF00FF !important;
+  font-size: 30px;
+  padding: 5px 30px;
+}
+
 .datetime {
   select {
     width: auto;
@@ -217,12 +224,25 @@ footer {
   }
 }
 
+label {
+  font-weight: bold;
+}
+
 .hint {
   display: block;
-  font-size: 0.8em;
+  font-size: 0.7em;
   color: #999;
+  margin: -0.6em 0 0;
+  padding: 0;
 }
 
 .actions {
   margin: 20px 0;
+}
+.redactor_text {
+  min-height: 10em;
+}
+
+div.input {
+  margin-bottom: 10px;
 }

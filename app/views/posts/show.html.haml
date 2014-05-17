@@ -6,6 +6,9 @@
 .row
   .columns.large-12
     %h1= @post
+    %p
+      by #{@post.author} #{@post.published_at.stamp('at 20:57 on Wednesday, 2nd July 1999')}
     = image_tag @post.image_url
     = simple_format @post.body
     = link_to "Edit Post", edit_post_path(@post), class: 'button'
+    = link_to "Delete Post", @post, method: :delete, class: 'button alert'

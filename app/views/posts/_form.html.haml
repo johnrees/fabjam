@@ -1,9 +1,13 @@
 = simple_form_for @post do |f|
+
   = f.input :name
   -# = f.input :slug
-  = f.input :body
-  = f.input :image_url, input_html: { class: 'fp', data: { fp_store_location: 'S3', fp_store_path: 'uploads/news/', fp_store_container: ENV['S3_BUCKET'] } }
-  = f.input :published_at, as: 'datetime', label: 'Publish at', hint: "Set it to a future date for posts that aren't ready to go live yet", minute_step: 10, default: Time.now
+  .row
+    .columns.large-6= f.input :image_url, input_html: { class: 'fp', data: { fp_store_location: 'S3', fp_store_path: 'uploads/news/', fp_store_container: ENV['S3_BUCKET'] } }
+    .columns.large-6= f.input :published_at, as: 'datetime', label: 'Publish at', hint: "Set it to a future date for posts that aren't ready to go live yet", minute_step: 10, default: Time.now
+
+  = f.input :body, input_html: { class: 'redactor', rows: 20, cols: 100 }
+
 
   .actions
     = f.submit class: 'button'
