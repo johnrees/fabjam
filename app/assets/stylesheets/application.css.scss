@@ -209,3 +209,20 @@ footer {
     height: 100%;
   }
 }
+
+.datetime {
+  select {
+    width: auto;
+    padding: 0 20px;
+  }
+}
+
+.hint {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+}
+
+.actions {
+  margin: 20px 0;
+}
