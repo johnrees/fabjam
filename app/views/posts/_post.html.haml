@@ -1,5 +1,5 @@
 = content_tag_for :li, post do
   = link_to post do
     %span.published-at= post.published_at.stamp('13/01/2000')
-    = image_tag "http://placehold.it/300x200"
+    = image_tag post.image_url, style: "width: 300px; height: 200px;"
     = link_to post, post

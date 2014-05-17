@@ -73,6 +73,9 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffaker (1.23.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     foundation-rails (5.2.2.0)
@@ -211,6 +214,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   ffaker
+  figaro
   font-awesome-rails
   foundation-rails
   friendly_id!

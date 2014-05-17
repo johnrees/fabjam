@@ -6,6 +6,7 @@ gem 'bourbon'
 gem 'rails', '4.1.0'
 gem 'stamp'
 gem 'redcarpet'
+gem 'figaro'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'haml-rails'
