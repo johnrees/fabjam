@@ -15,7 +15,9 @@
 //= require foundation
 //= require redactor-rails
 //= require holder
+//= require jquery.geocomplete
 //= require leaflet
+//= require jquery.nouislider.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

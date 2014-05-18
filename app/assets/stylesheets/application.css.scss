@@ -18,6 +18,7 @@
  *= require leaflet
  *= require redactor-rails
  *= require foundation_and_overrides
+ *= require jquery.nouislider
 
  */
 @import "bourbon";
@@ -96,6 +97,11 @@ body {
   background: #FFF;
 }
 
+header {
+  position: relative;
+  z-index: 1001; // thanks to leaflet.js
+}
+
 #header-image {
   margin: 0 auto -70px;
   position: relative;
@@ -137,10 +143,11 @@ body {
 }
 
 .count {
+  font-family: BebasNeue;
   display: block;
-  font-size: 5em;
+  font-size: 3em;
   line-height: 1em;
-  color: #F7401C;
+  color: #FF00FF;
 }
 
 .panel {
@@ -245,4 +252,11 @@ label {
 
 div.input {
   margin-bottom: 10px;
+}
+
+.alert-box {
+  ul,li {
+    margin: 0 inherit;
+    padding: 0 inherit;
+  }
 }

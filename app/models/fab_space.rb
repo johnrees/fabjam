@@ -4,7 +4,8 @@ class FabSpace < ActiveRecord::Base
   belongs_to :fab_space
   has_many :projects
 
-  validates_presence_of :name, :description
+  validates_presence_of :name, :description, :max_participants
+  validates_numericality_of :max_participants, greater_than: 0
 
   extend FriendlyId
   friendly_id :name, use: :slugged
