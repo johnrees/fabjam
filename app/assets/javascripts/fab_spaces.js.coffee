@@ -22,18 +22,19 @@ jQuery ->
       maxZoom: 18
     }).addTo(map)
 
-  $(".slider").noUiSlider
-    start: 1
-    step: 1
-    range:
-      min: parseInt 0#$(this).data('min')
-      max: 50
-    serialization:
-      lower: [
-        $.Link
-          target: (value, handleElement, slider) ->
-            slider.prev('p').find('span').text(value)
-            slider.next('input').val(value)
-      ]
-      format:
-        decimals: 0
+  if $(".slider").length > 0
+    $(".slider").noUiSlider
+      start: 1
+      step: 1
+      range:
+        min: parseInt 0#$(this).data('min')
+        max: 50
+      serialization:
+        lower: [
+          $.Link
+            target: (value, handleElement, slider) ->
+              slider.prev('p').find('span').text(value)
+              slider.next('input').val(value)
+        ]
+        format:
+          decimals: 0
