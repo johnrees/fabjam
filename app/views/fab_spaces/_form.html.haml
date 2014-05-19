@@ -11,6 +11,7 @@
         %legend Fab Space Details
         = f.input :name
         = f.input :description, input_html: { rows: 4 }, hint: "A brief description of your Fab Space, what it specialises in etc."
+        = f.input :logo_url, input_html: { class: 'fp', data: { fp_store_location: 'S3', fp_store_path: 'uploads/logos/', fp_store_container: ENV['S3_BUCKET'] } }
         = text_field_tag :geocomplete, "", id: 'geocomplete', data: { latlng: "#{fab_space.lat},#{fab_space.lng}"}
         #geocomplete-map
         = f.input :lat, input_html: { "data-geo" => "lat" }, as: 'hidden'
