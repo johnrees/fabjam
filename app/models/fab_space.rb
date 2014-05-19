@@ -15,7 +15,7 @@ class FabSpace < ActiveRecord::Base
   end
 
   def coordinates
-    [latitude,longitude].join(',')
+    [lat,lng].join(',')
   end
 
 end
