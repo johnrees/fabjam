@@ -22,6 +22,12 @@ jQuery ->
       maxZoom: 18
     }).addTo(map)
 
+    $.getJSON '/spaces.json', (result) ->
+      for fab_space in result.fab_spaces
+        if fab_space.lat
+          marker = L.marker([fab_space.lat, fab_space.lng]).addTo(map)
+          marker.bindPopup("<b>#{fab_space.name}</b><br>#{fab_space.description}")
+
 
   if $(".slider").length > 0
     $(".slider").noUiSlider

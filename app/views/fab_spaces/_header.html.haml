@@ -11,3 +11,6 @@
         %ul.button-group{style: 'float: right; margin-top: 10px;'}
           %li= link_to "List View", fab_spaces_path, class: 'button'
           %li= link_to "Map View", map_fab_spaces_path, class: 'button'
+
+    - if can? :create, FabSpace
+      = link_to "Add your Fab Space", new_fab_space_path, class: "pink button #{'disabled' unless can? :create, FabSpace}"
