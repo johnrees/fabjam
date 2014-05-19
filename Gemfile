@@ -8,6 +8,8 @@ gem 'rails', '4.1.0'
 gem 'stamp'
 gem 'redcarpet'
 gem 'figaro'
+gem 'capistrano', '~> 2.15'
+gem 'unicorn'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'haml-rails'
