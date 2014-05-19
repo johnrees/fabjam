@@ -2,15 +2,15 @@ upstream unicorn {
   server unix:/tmp/unicorn.<%= application %>.sock fail_timeout=0;
 }
 
-server {
-  listen       80;
-  server_name  fabjam.org;
-  return 301 $scheme://www.fabjam.org$request_uri;
-}
+# server {
+#   listen       80;
+#   server_name  fabjam.org;
+#   return 301 $scheme://www.fabjam.org$request_uri;
+# }
 
 server {
-  listen 80;# default deferred;
-  server_name www.fabjam.org api.fabjam.org;
+  listen 80 default deferred;
+  # server_name www.fabjam.org api.fabjam.org;
 
   root <%= current_path %>/public;
 
