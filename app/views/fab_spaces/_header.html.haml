@@ -4,8 +4,10 @@
 
 .row
   .columns.large-12
-    %h1 Fab Spaces
-
-    %ul.button-group
-      %li= link_to "List View", fab_spaces_path, class: 'button'
-      %li= link_to "Map View", map_fab_spaces_path, class: 'button'
+    .row
+      .columns.large-6
+        %h1 Fab Spaces
+      .columns.large-6
+        %ul.button-group{style: 'float: right; margin-top: 10px;'}
+          %li= link_to "List View", fab_spaces_path, class: 'button'
+          %li= link_to "Map View", map_fab_spaces_path, class: 'button'
