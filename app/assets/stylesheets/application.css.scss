@@ -24,6 +24,29 @@
 @import "bourbon";
 @include font-face(BebasNeue, "bebasneue_regular_macroman/BebasNeue-webfont", normal, $asset-pipeline: true);
 
+.images {
+  overflow: hidden;
+  clear: both;
+  display: block;
+  text-align: center;
+  img {
+    display: inline-block;
+  }
+}
+
+#organisation img {
+  height: 90px;
+  margin: 20px;
+}
+
+#partners .images {
+  margin: 10px 0 20px 0;
+  img {
+    height: 54px;
+    margin: 10px;
+  }
+}
+
 #join-us {
   .disabled span {
     background: #CCCCCC;
