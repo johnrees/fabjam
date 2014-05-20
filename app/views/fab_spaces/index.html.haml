@@ -1,8 +1,12 @@
 = render "header"
 .row
   .columns.large-12
-    %ul
-      - @fab_spaces.each do |fab_space|
-        = content_tag_for :li, fab_space do
-          = link_to fab_space, fab_space
+    %ul.large-block-grid-4
+      - @fab_spaces.order('name ASC').where.not(country_code: nil).group_by(&:country_code).each do |code,fab_spaces|
+        %li
+          = Country[code.upcase]
+          %ul
+            - fab_spaces.each do |fab_space|
+              = content_tag_for :li, fab_space do
+                = link_to fab_space, fab_space
 
