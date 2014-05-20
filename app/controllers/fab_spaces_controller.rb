@@ -17,7 +17,7 @@ private
   # end
 
   def permitted_params
-    params.permit(:fab_space => [:urls, :name, :description, :lat, :lng, :max_participants, :max_organisations, :logo_url, :fablabsio_id])
+    params.permit(:fab_space => [:urls, :name, :description, :lat, :lng, :max_participants, :max_organisations, :logo_url, :fablabsio_id, :address, :country_code])
   end
 
 end

@@ -4,7 +4,7 @@ class FabSpace < ActiveRecord::Base
   belongs_to :fab_space
   has_many :projects
 
-  validates_presence_of :name, :description, :max_participants
+  validates_presence_of :name, :description, :max_participants, :address, :country_code
   validates_numericality_of :max_participants, greater_than: 0
 
   extend FriendlyId
@@ -20,7 +20,7 @@ class FabSpace < ActiveRecord::Base
 
   def links
     if urls.present?
-      urls.split('\n').map(&:trim).reject(&:blank?)
+      urls.split("\n").map(&:chomp).reject(&:blank?)
     else
       []
     end

@@ -13,9 +13,17 @@
         = f.input :description, input_html: { rows: 4 }, hint: "A brief description of your Fab Space, what it specialises in etc."
         = f.input :logo_url, input_html: { class: 'fp', data: { fp_store_location: 'S3', fp_store_path: 'uploads/logos/', fp_store_container: ENV['S3_BUCKET'] } }
         = text_field_tag :geocomplete, "", id: 'geocomplete', data: { latlng: "#{fab_space.lat},#{fab_space.lng}"}
-        #geocomplete-map
-        = f.input :lat, input_html: { "data-geo" => "lat" }, as: 'hidden'
-        = f.input :lng, input_html: { "data-geo" => "lng" }, as: 'hidden'
+        .row
+          .columns.large-7
+            #geocomplete-map
+          .columns.large-5
+            = f.input :address, input_html: { rows: 8, "data-geo" => "formatted_address" }
+            = f.input :country_code, as: 'country', label: 'Country', iso_codes: true, input_html: { "data-geo" => "country_short" }
+            -# = f.input :country_code, label: 'Country', input_html: { "data-geo" => "country_short" }
+            = f.input :lat, input_html: { "data-geo" => "lat" }, as: 'hidden'
+            = f.input :lng, input_html: { "data-geo" => "lng" }, as: 'hidden'
+        %br/
+        = f.input :urls, hint: 'Links, please seperate with new lines', input_html: { rows: 5 }
 
       %fieldset
         %legend Fab Jam Availability Details
