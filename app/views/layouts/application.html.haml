@@ -3,7 +3,8 @@
   %head
     %meta{charset: "utf-8"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "FabJam"
+    %title= content_for?(:title) ? "#{yield(:title)} | FabJam" : "FabJam - June 14th 2014"
+
     = stylesheet_link_tag    "application"
     <link href='http://fonts.googleapis.com/css?family=Cuprum:400,700' rel='stylesheet' type='text/css'>
     = javascript_include_tag "vendor/modernizr"
@@ -11,46 +12,48 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %header
-      .contain-to-grid.fixed
-        %nav.top-bar{"data-topbar" => ""}
-          %ul.title-area
-            %li.name
-              = link_to root_path do
-                = image_tag "fabjam_black.png", id: 'logo'
-            %li.toggle-topbar.menu-icon
-              %a{href: "#"}
-                %span Menu
-          %section.top-bar-section
-            %ul.left
-              %li= link_to "About", about_path
-              %li.has-dropdown
-                = link_to "Fabspaces", fab_spaces_path
-                %ul.dropdown
-                  %li= link_to "List", fab_spaces_path
-                  %li= link_to "Map", map_fab_spaces_path
-              -# %li= link_to "Projects", projects_path
-              %li= link_to "News", posts_path
-              -# %li.has-form
-              -#   .row.collapse
-              -#     .large-12.columns
-              -#       = text_field_tag :q, params[:q], placeholder: 'Search...', id: 'search-box'
-            %ul.right
-              - if current_user
+    #wrapper
+      %header
+        .contain-to-grid.fixed
+          %nav.top-bar{"data-topbar" => ""}
+            %ul.title-area
+              %li.name
+                = link_to root_path do
+                  = image_tag "fabjam_black.png", id: 'logo'
+              %li.toggle-topbar.menu-icon
+                %a{href: "#"}
+                  %span Menu
+            %section.top-bar-section
+              %ul.left
+                %li= link_to "About", about_path
                 %li.has-dropdown
-                  = link_to current_user, me_path
+                  = link_to "Fabspaces", fab_spaces_path
                   %ul.dropdown
-                    %li= link_to "Dashboard", me_path
-                    %li= link_to "Sign out", destroy_user_session_path, method: :delete
-              - else
-                %li= link_to "Login", new_user_session_path
-                %li= link_to "Register", new_user_registration_path
+                    %li= link_to "List", fab_spaces_path
+                    %li= link_to "Map", map_fab_spaces_path
+                -# %li= link_to "Projects", projects_path
+                %li= link_to "News", posts_path
+                -# %li.has-form
+                -#   .row.collapse
+                -#     .large-12.columns
+                -#       = text_field_tag :q, params[:q], placeholder: 'Search...', id: 'search-box'
+              %ul.right
+                - if current_user
+                  %li.has-dropdown
+                    = link_to current_user, me_path
+                    %ul.dropdown
+                      %li= link_to "Dashboard", me_path
+                      %li= link_to "Sign out", destroy_user_session_path, method: :delete
+                - else
+                  %li= link_to "Login", new_user_session_path
+                  %li= link_to "Register", new_user_registration_path
 
 
 
-    -# <p class="notice"><haml_loud> notice </haml_loud></p>
-    -# <p class="alert"><haml_loud> alert </haml_loud></p>
-    #main= yield
+      -# <p class="notice"><haml_loud> notice </haml_loud></p>
+      -# <p class="alert"><haml_loud> alert </haml_loud></p>
+      #main= yield
+      #push
 
   %footer
     .stripe

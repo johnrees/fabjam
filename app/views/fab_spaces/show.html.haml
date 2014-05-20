@@ -5,7 +5,7 @@
 
 .row
   .columns.large-12
-    %h1= @fab_space
+    = title @fab_space
     .row{style: 'margin-bottom: 20px'}
       .columns.large-2= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@fab_space.coordinates}&zoom=13&size=180x180&maptype=roadmap&sensor=false"
       .columns.large-10

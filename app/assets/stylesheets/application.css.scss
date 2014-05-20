@@ -24,8 +24,31 @@
 @import "bourbon";
 @include font-face(BebasNeue, "bebasneue_regular_macroman/BebasNeue-webfont", normal, $asset-pipeline: true);
 
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -270px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, #push {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 270px !important; /* '.push' must be the same height as 'footer' */
+}
+
+
 .button-group a.button {
   border-radius: 0 !important;
+}
+
+.reveal-modal {
+  padding: 10px !important;
 }
 
 .images {

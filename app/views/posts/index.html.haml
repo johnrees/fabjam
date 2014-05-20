@@ -4,7 +4,7 @@
 
 .row
   .columns.large-12
-    %h1 News
+    = title "News"
     %ul#latest-news.large-block-grid-3= render @posts
 
     - if can? :create, Post
