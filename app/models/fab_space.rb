@@ -19,7 +19,9 @@ class FabSpace < ActiveRecord::Base
   end
 
   def links
-    urls.split('\n').map(&:trim).reject(&:blank?)
+    if urls.present?
+      urls.split('\n').map(&:trim).reject(&:blank?)
+    end
   end
 
 end
