@@ -1,10 +1,10 @@
 
 .row
   .columns.large-12
-    %h1 Hello #{current_user.email}
+    %h1 Hello #{current_user.first_name}
     %p What would you like to do?
 
-    %ul
+    %ul#dashboard-options
       - if can? :create, Post
         %li= link_to "Write a Blog Post", new_post_path, class: 'button'
       - if can? :create, FabSpace
