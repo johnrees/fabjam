@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RedactorRails::Engine => '/redactor_rails'
   get 'me', to: 'me#dashboard', as: 'me'
   resources :posts, path: 'news'
 

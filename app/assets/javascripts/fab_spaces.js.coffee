@@ -1,5 +1,34 @@
 jQuery ->
 
+  $("#fab_space_name").selectize
+    maxItems: 1
+    valueField: "url"
+    labelField: "name"
+    searchField: "name"
+    create: false
+    render:
+      option: (item, escape) ->
+        "<div>" + "<span class=\"t\">" + "<span class=\"name\"><i class=\"icon " + ((if item.fork then "fork" else "source")) + "\"></i>" + escape(item.name) + "</span>" + "<span class=\"by\">" + escape(item.username) + "</span>" + "</span>" + "<span class=\"description\">" + escape(item.description) + "</span>" + "<ul class=\"meta\">" + ((if item.language then "<li class=\"language\">" + escape(item.language) + "</li>" else "")) + "<li class=\"watchers\"><span>" + escape(item.watchers) + "</span> watchers</li>" + "<li class=\"forks\"><span>" + escape(item.forks) + "</span> forks</li>" + "</ul>" + "</div>"
+
+    score: (search) ->
+      score = @getScoreFunction(search)
+      (item) ->
+        score(item) * (1 + Math.min(item.watchers / 100, 1))
+
+    load: (query, callback) ->
+      return callback()  unless query.length
+      $.ajax
+        url: "https://api.github.com/legacy/repos/search/" + encodeURIComponent(query)
+        type: "GET"
+        error: ->
+          callback()
+
+        success: (res) ->
+          callback res.repositories.slice(0, 10)
+
+
+
+
   $("#geocomplete").geocomplete
     map: "#geocomplete-map"
     details: 'form'

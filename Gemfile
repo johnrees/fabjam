@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'redactor-rails'
+gem "carrierwave"
+gem "mini_magick"
+gem 'redactor-rails', github: 'SammyLin/redactor-rails'
 gem 'bourbon'
 gem 'rolify', github: 'EppO/rolify'
 gem 'rails', '4.1.0'
@@ -11,6 +13,7 @@ gem 'redcarpet'
 gem 'figaro'
 gem 'capistrano', '~> 2.15'
 gem 'unicorn'
+gem "selectize-rails"
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'haml-rails'

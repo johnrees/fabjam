@@ -18,4 +18,8 @@ class FabSpace < ActiveRecord::Base
     [lat,lng].join(',')
   end
 
+  def links
+    urls.split('\n').map(&:trim).reject(&:blank?)
+  end
+
 end

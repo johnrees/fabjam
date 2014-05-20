@@ -6,6 +6,7 @@
 .row
   .columns.large-12
     = title @fab_space
+
     .row{style: 'margin-bottom: 20px'}
       .columns.large-2= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@fab_space.coordinates}&zoom=13&size=180x180&maptype=roadmap&sensor=false"
       .columns.large-10
@@ -13,6 +14,10 @@
           = link_to "Edit", edit_fab_space_path(@fab_space), class: 'button'
 
         .fab-space-description= simple_format @fab_space.description
+
+    %ul
+      - @fab_space.links.each do |link|
+        %li= link_to link, link
 
 -# .stripe
 -#   .row
