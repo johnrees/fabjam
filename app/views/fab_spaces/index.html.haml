@@ -4,7 +4,9 @@
     %ul.large-block-grid-4
       - @fab_spaces.order('name ASC').where.not(country_code: nil).group_by(&:country_code).each do |code,fab_spaces|
         %li
-          = Country[code.upcase]
+          %h2{style: 'font-size: 1.4em'}
+            %span.flag.flag-ad
+            = Country[code.upcase]
           %ul
             - fab_spaces.each do |fab_space|
               = content_tag_for :li, fab_space do

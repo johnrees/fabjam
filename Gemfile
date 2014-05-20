@@ -7,6 +7,7 @@ gem "mini_magick"
 gem 'redactor-rails', github: 'SammyLin/redactor-rails'
 gem 'bourbon'
 gem 'countries'
+
 gem 'country_select'
 gem 'rolify', github: 'EppO/rolify'
 gem 'rails', '4.1.0'
