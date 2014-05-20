@@ -24,6 +24,10 @@
 @import "bourbon";
 @include font-face(BebasNeue, "bebasneue_regular_macroman/BebasNeue-webfont", normal, $asset-pipeline: true);
 
+.button-group a.button {
+  border-radius: 0 !important;
+}
+
 .images {
   overflow: hidden;
   clear: both;
