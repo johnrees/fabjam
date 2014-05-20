@@ -5,7 +5,7 @@
       - @fab_spaces.order('name ASC').where.not(country_code: nil).group_by(&:country_code).each do |code,fab_spaces|
         %li
           %h2{style: 'font-size: 1.4em'}
-            %span.flag.flag-ad
+            %span.flag{class: "flag-#{code}"}
             = Country[code.upcase]
           %ul
             - fab_spaces.each do |fab_space|
