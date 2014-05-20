@@ -6,9 +6,19 @@
 .row
   .columns.large-12
     %h1= @post
-    %p
+    .post-details
       by #{@post.author} #{@post.published_at.stamp('at 20:57 on Wednesday, 2nd July 1999')}
-    = image_tag @post.image_url
+    %p= image_tag @post.image_url
     = @post.body.html_safe
-    = link_to "Edit Post", edit_post_path(@post), class: 'button'
-    = link_to "Delete Post", @post, method: :delete, class: 'button alert'
+
+    - if can? :manage, @post
+      = link_to "Edit Post", edit_post_path(@post), class: 'button'
+      = link_to "Delete Post", @post, method: :delete, class: 'button alert'
+
+.row.pagination
+  .columns.small-6
+    - if @post.prev
+      = link_to "#{fa_icon 'arrow-left'} #{@post.prev}".html_safe, @post.prev
+  .columns.small-6.text-right
+    - if @post.next
+      = link_to "#{@post.next} #{fa_icon 'arrow-right'}".html_safe, @post.next

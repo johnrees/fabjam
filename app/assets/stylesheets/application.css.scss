@@ -19,7 +19,7 @@
  *= require redactor-rails
  *= require foundation_and_overrides
  *= require jquery.nouislider
-
+ *= require font-awesome
  */
 @import "bourbon";
 @include font-face(BebasNeue, "bebasneue_regular_macroman/BebasNeue-webfont", normal, $asset-pipeline: true);
@@ -273,11 +273,23 @@ label {
   padding: 0;
 }
 
+.post-details {
+  margin: -1em 0 0;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #AAA;
+}
+
 .actions {
   margin: 20px 0;
 }
 .redactor_text {
   min-height: 10em;
+}
+
+.pagination a {
+  display: block;
+  padding: 10px 0;
 }
 
 div.input {
