@@ -10,6 +10,12 @@ class FabSpacesController < InheritedResources::Base
     @fab_spaces = FabSpace.all
   end
 
+  def create
+    @fab_space = build_resource
+    @fab_space.creator = current_user
+    create!
+  end
+
 private
 
   # def fab_space_params

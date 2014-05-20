@@ -8,8 +8,9 @@ class Ability
 
     can :read, FabSpace
     can :read, Post
+
     unless user.new_record?
-      can :manage, FabSpace
+      can :manage, FabSpace, creator_id: user.id
       if user.has_role? :superadmin
         can :manage, :all
       end
