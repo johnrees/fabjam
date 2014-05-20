@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'me', to: 'me#dashboard', as: 'me'
   resources :posts, path: 'news'
 
   resources :organisations
 
-  get 'me', to: 'me#dashboard', as: 'me'
+
 
   devise_for :users
   resources :projects
