@@ -1,5 +1,5 @@
 class PostsController < InheritedResources::Base
-
+  load_and_authorize_resource
   defaults resource_class: Post.friendly
 
   def create

@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def markdown(text)
     renderer = HTML.new(hard_wrap: true, filter_html: true)
     options = {
@@ -11,4 +12,8 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
+
+  def title
+  end
+
 end

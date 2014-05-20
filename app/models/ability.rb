@@ -5,10 +5,14 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
-    if user.new_record?
-      can :read, :all
-    else
-      can :manage, :all
+
+    can :read, FabSpace
+    can :read, Post
+    unless user.new_record?
+      can :manage, FabSpace
+      if user.has_role? :superadmin
+        can :manage, :all
+      end
     end
 
     #

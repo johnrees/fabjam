@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/EppO/rolify.git
+  revision: befc8db8d1894cc2fe86407dbedc1aebb3f3592f
+  specs:
+    rolify (3.4.0)
+
+GIT
   remote: git://github.com/norman/friendly_id.git
   revision: 57baa3549a5d5b1ee0cc9b6a803c59d9de0e7d59
   specs:
@@ -255,6 +261,7 @@ DEPENDENCIES
   rails_12factor
   redactor-rails
   redcarpet
+  rolify!
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

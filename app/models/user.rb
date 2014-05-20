@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
 
   has_many :projects, foreign_key: :creator_id
   has_many :fab_spaces, foreign_key: :creator_id
