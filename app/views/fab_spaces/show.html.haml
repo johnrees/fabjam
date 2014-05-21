@@ -15,11 +15,25 @@
       .columns.large-10
         - if can? :manage, @fab_space
           = link_to "Edit", edit_fab_space_path(@fab_space), class: 'button'
+
+        - if current_user
+          - if current_user.joined? @fab_space
+            = link_to "Leave this Fab Space", leave_fab_space_path(@fab_space), class: 'button'
+          - else
+            = link_to "Apply to join this Fab Space", join_fab_space_path(@fab_space), class: 'button pink'
+
         .fab-space-description= simple_format @fab_space.description
 
     %ul
       - @fab_space.links.each do |link|
         %li= link_to link, link
+
+    - if @fab_space.members.any?
+      #h3 Applied to Join
+      %ul.members
+        - @fab_space.members.each do |member|
+          %li= member.user
+
 
 -# .stripe
 -#   .row

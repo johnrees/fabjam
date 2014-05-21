@@ -9,6 +9,12 @@
         %li= link_to "Write a Blog Post", new_post_path, class: 'button'
       - if can? :create, FabSpace
         %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
+
+      - unless current_user.fab_space
+        %li= link_to "Join a Fab Space", fab_spaces_path, class: 'button'
+      - else
+        %li= link_to "Go to '#{current_user.fab_space}'", current_user.fab_space, class: 'button'
+
       %li= link_to "Edit your Details", edit_user_registration_path, class: 'button'
 
       %li= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button alert'

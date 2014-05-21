@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :projects
 
   resources :fab_spaces, path: 'spaces' do
+    member do
+      get :join
+      get :leave
+    end
     collection do
       get :map
     end

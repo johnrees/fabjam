@@ -16,6 +16,19 @@ class FabSpacesController < InheritedResources::Base
     create!
   end
 
+  def join
+    @fab_space = FabSpace.friendly.find(params[:id])
+    current_user.fab_space = @fab_space
+    current_user.save
+    redirect_to @fab_space
+  end
+
+  def leave
+    @fab_space = FabSpace.friendly.find(params[:id])
+    current_user.member.delete
+    redirect_to @fab_space
+  end
+
 private
 
   # def fab_space_params
