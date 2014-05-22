@@ -1,12 +1,23 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 li.post {
   color: #AFAFAF;
   .published-at {
     font-size: 0.9em;
+    color: #AAA;
+  }
+  .post-title {
+    display: block;
+    clear: both;
+    font-family: BebasNeue;
+    font-size: 1.4em;
+    line-height: 1em;
   }
   img {
+    display: block;
+    clear: both;
     margin-bottom: 5px;
   }
   a {

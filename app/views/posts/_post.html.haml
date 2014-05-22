@@ -2,4 +2,4 @@
   = link_to post do
     %span.published-at= post.published_at.stamp('13/01/2000')
     = image_tag post.image_url, style: "width: 300px; height: 200px;"
-    = link_to post, post
+    = link_to post, post, class: 'post-title'
