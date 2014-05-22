@@ -8,7 +8,7 @@
     = title @post
     .post-details
       by #{@post.author} #{@post.published_at.stamp('at 20:57 on Wednesday, 2nd July 1999')}
-    %p= image_tag @post.image_url
+    %p= image_tag @post.image_url, id: 'main-image'
     = @post.body.html_safe
 
     - if can? :manage, @post
