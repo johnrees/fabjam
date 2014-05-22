@@ -15,15 +15,6 @@
       = link_to "Edit Post", edit_post_path(@post), class: 'button'
       = link_to "Delete Post", @post, method: :delete, class: 'button alert'
 
--# %ul.rrssb-buttons.clearfix
--#   %li.email
--#     = link_to "#" do
--#       = fa_icon "envelope"
--#       Email
--#   %li.facebook= fa_icon "facebook"
--#   %li.twitter= fa_icon "twitter"
--#   %li.googleplus= fa_icon "google-plus"
-
 .row.pagination
   .columns.small-6
     - if @post.prev

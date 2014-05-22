@@ -14,6 +14,17 @@ GIT
       orm_adapter
 
 GIT
+  remote: git://github.com/mperham/sidekiq.git
+  revision: 44c4654b081b756d6e2722ecb04032b54bc2c172
+  specs:
+    sidekiq (3.1.0)
+      celluloid (>= 0.15.2)
+      connection_pool (>= 2.0.0)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
+
+GIT
   remote: git://github.com/norman/friendly_id.git
   revision: 57baa3549a5d5b1ee0cc9b6a803c59d9de0e7d59
   specs:
@@ -21,7 +32,6 @@ GIT
       activerecord (>= 4.0.0)
 
 GEM
-  remote: https://rails-assets.org/
   remote: https://rubygems.org/
   specs:
     actionmailer (4.1.0)
@@ -166,6 +176,8 @@ GEM
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0)
@@ -178,7 +190,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.0)
       sprockets-rails (~> 2.0)
-    rails-assets-RRSSB (1.6.0)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -223,15 +234,13 @@ GEM
     selectize-rails (0.9.0)
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
-    sidekiq (2.17.0)
-      celluloid (>= 0.15.2)
-      connection_pool (>= 1.0.0)
-      json
-      redis (>= 3.0.4)
-      redis-namespace (>= 1.3.1)
     simple_form (3.0.2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     spring (1.1.2)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -298,7 +307,6 @@ DEPENDENCIES
   minitest
   pg
   rails (= 4.1.0)
-  rails-assets-RRSSB
   rails_12factor
   redactor-rails!
   redcarpet
@@ -308,8 +316,9 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   selectize-rails
   shoulda-matchers
-  sidekiq
+  sidekiq!
   simple_form
+  sinatra (>= 1.3.0)
   spring
   stamp
   turbolinks

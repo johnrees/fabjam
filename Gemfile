@@ -1,4 +1,3 @@
-source 'https://rails-assets.org'
 source 'https://rubygems.org'
 
 
@@ -8,6 +7,8 @@ gem "mini_magick"
 gem 'redactor-rails', github: 'SammyLin/redactor-rails'
 gem 'bourbon'
 gem 'countries'
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 
 gem 'country_select'
 gem 'rolify', github: 'EppO/rolify'
@@ -53,8 +54,7 @@ gem 'holder_rails'
 gem 'inherited_resources'
 gem 'simple_form'
 gem 'active_model_serializers'
-gem 'rails-assets-RRSSB'
-gem 'sidekiq'
+gem 'sidekiq', github: 'mperham/sidekiq'
 
 group :test, :development do
   gem 'minitest'
