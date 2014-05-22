@@ -8,7 +8,7 @@ namespace :redis do
     run "wget http://download.redis.io/redis-stable.tar.gz"
     run "tar xvzf redis-stable.tar.gz"
     run "rm redis-stable.tar.gz"
-    run "cd redis-stable && #{sudo} make && #{sudo} make install && #{sudo} make clean"
+    run "cd redis-stable && #{sudo} make && #{sudo} make install && #{sudo} make test"
     p "Now login and run 'sudo ./install_server.sh'"
   end
   after "deploy:install", "redis:install"

@@ -6,7 +6,7 @@ set :bundle_flags,   "--deployment --verbose --without development test"
 set :rails_env, "production"
 set :recipes, "config/recipes"
 
-%w(base logs figaro nginx logs unicorn security check).each do |r|
+%w(base logs figaro nginx logs unicorn security check redis sidekiq).each do |r|
   load "#{recipes}/#{r}"
 end
 

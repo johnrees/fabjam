@@ -18,6 +18,7 @@
 //= require jquery.geocomplete
 //= require leaflet
 //= require jquery.nouislider.min
+//= require RRSSB
 //= require selectize
 //= require_tree .
 

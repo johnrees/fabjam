@@ -1,3 +1,4 @@
+source 'https://rails-assets.org'
 source 'https://rubygems.org'
 
 
@@ -51,6 +52,8 @@ gem 'holder_rails'
 gem 'inherited_resources'
 gem 'simple_form'
 gem 'active_model_serializers'
+gem 'rails-assets-RRSSB'
+gem 'sidekiq'
 
 group :test, :development do
   gem 'minitest'
