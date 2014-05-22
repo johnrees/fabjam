@@ -37,6 +37,7 @@ gem 'friendly_id', github: 'norman/friendly_id'
 gem 'rails_12factor', group: :production
 # gem 'rugged', github: 'libgit2/rugged', branch: 'development', submodules: true
 gem 'devise'
+gem "devise-async"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
