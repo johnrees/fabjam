@@ -13,26 +13,25 @@
     - unless current_user
       #join-us
         .title Join Us
-        %ul.large-block-grid-3.small-block-grid-1
-          %li
-            = link_to new_user_registration_path do
+        = link_to new_user_registration_path do
+
+          %ul.large-block-grid-3.small-block-grid-1
+            %li
               .register
                 = image_tag "icons/house.png"
                 %span Register as a Fab Space
-          %li.disabled
-            .register
-              = image_tag "icons/man.png"
-              %span
-                Register as a Participant
-                %br/
-                (Coming Soon)
-          %li.disabled
-            .register
-              = image_tag "icons/building.png"
-              %span
-                Register as a Supporter
-                %br/
-                (Coming Soon)
+            %li
+              .register
+                = image_tag "icons/man.png"
+                %span
+                  Register as a Participant
+            %li.disabled
+              .register
+                = image_tag "icons/building.png"
+                %span
+                  Register as a Supporter
+                  %br/
+                  (Coming Soon)
 
     -# #latest-labs
     -#   .title Latest Labs

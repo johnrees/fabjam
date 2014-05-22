@@ -2,6 +2,8 @@
 <div class="columns large-12 centered">
 <h2>Sign up</h2>
 
+<div class="panel"><p>To register as a participant, or to add a Fab Space that participants can use, please register below or login if you already have an account.</p></div>
+
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -31,5 +33,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<br/>
 </div>
 </div>
