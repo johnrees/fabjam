@@ -1,6 +1,6 @@
 require File.expand_path('../application', __FILE__)
 require "bundler/capistrano"
-
+require "sidekiq/capistrano"
 set :bundle_flags,   "--deployment --verbose --without development test"
 
 set :rails_env, "production"
