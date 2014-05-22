@@ -55,6 +55,7 @@ gem 'inherited_resources'
 gem 'simple_form'
 gem 'active_model_serializers'
 gem 'sidekiq', github: 'mperham/sidekiq'
+gem "capistrano-sidekiq"
 
 group :test, :development do
   gem 'minitest'
