@@ -62,6 +62,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    airbrake (3.1.16)
+      builder
+      multi_json
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bcrypt-ruby (3.1.5)
@@ -284,6 +287,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  airbrake
   bourbon
   cancancan
   capistrano (~> 2.15)

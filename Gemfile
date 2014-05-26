@@ -9,6 +9,7 @@ gem 'bourbon'
 gem 'countries'
 gem 'sinatra', '>= 1.3.0', :require => nil
 
+gem "airbrake"
 
 gem 'country_select'
 gem 'rolify', github: 'EppO/rolify'
