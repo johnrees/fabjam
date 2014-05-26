@@ -21,12 +21,14 @@ class FabSpacesController < InheritedResources::Base
     current_user.fab_space = @fab_space
     current_user.save
     redirect_to @fab_space
+    authorize! :show, @fab_space
   end
 
   def leave
     @fab_space = FabSpace.friendly.find(params[:id])
     current_user.member.delete
     redirect_to @fab_space
+    authorize! :show, @fab_space
   end
 
 private

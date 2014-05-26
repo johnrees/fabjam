@@ -11,6 +11,8 @@ class Ability
 
     unless user.new_record?
       can :manage, FabSpace, creator_id: user.id
+      can :join, FabSpace
+      can :leave, FabSpace
       if user.has_role? :superadmin
         can :manage, :all
       end
