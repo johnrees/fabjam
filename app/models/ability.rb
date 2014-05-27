@@ -6,6 +6,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
 
+    can :create, FabSpace
     can :read, FabSpace
     can :read, Post
 
