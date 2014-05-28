@@ -4,11 +4,11 @@
     - if current_user && !current_user.fab_space
       .panel To join a fab space, visit its page and click <strong>Apply to join this space</strong>
     %ul.large-block-grid-4
-      - @fab_spaces.order('name ASC').where.not(country_code: nil).group_by(&:country_code).each do |code,fab_spaces|
+      - @fab_spaces.order('name ASC').where.not(country_code: nil).group_by{ |c| Country[c.country_code.upcase].name }.sort.each do |code,fab_spaces|
         %li
           %h2{style: 'font-size: 1.4em'}
-            %span.flag{class: "flag-#{code}"}
-            = Country[code.upcase]
+            %span.flag{class: "flag-#{Country.find_by_name(code)[0].downcase}"}
+            = code
           %ul
             - fab_spaces.each do |fab_space|
               = content_tag_for :li, fab_space do
