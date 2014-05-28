@@ -16,6 +16,10 @@ class FabSpace < ActiveRecord::Base
     name
   end
 
+  def blurb
+    description.truncate(100)
+  end
+
   def coordinates
     [lat,lng].join(',')
   end

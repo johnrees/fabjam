@@ -55,7 +55,7 @@ jQuery ->
       for fab_space in result.fab_spaces
         if fab_space.lat
           marker = L.marker([fab_space.lat, fab_space.lng]).addTo(map)
-          marker.bindPopup("<b><a href='/spaces/#{fab_space.slug}'>#{fab_space.name}</a></b><br>#{fab_space.description}")
+          marker.bindPopup("<b><a href='/spaces/#{fab_space.slug}'>#{fab_space.name}</a></b><br>#{fab_space.blurb}")
 
 
   if $(".slider").length > 0

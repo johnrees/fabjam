@@ -1,3 +1,4 @@
 class FabSpaceSerializer < ActiveModel::Serializer
-  attributes :id, :name, :slug, :description, :lat, :lng
+  attributes :id, :name, :slug, :blurb, :description, :lat, :lng
+
 end
