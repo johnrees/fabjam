@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
+  rescue_from Workflow::NoTransitionAllowed do |exception|
+    redirect_to :back, alert: "Sorry, you can't do that"
+  end
+
   def after_sign_in_path_for(resource)
     me_path
   end
