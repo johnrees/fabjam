@@ -12,7 +12,7 @@
     .row{style: 'margin-bottom: 20px'}
       .columns.large-2
         - if @fab_space.logo_url.present?
-          = image_tag @fab_space.logo_url
+          = image_tag @fab_space.logo_url, style: 'margin-top: 10px;'
         = link_to "https://www.google.com/maps/search/#{@fab_space.coordinates}", style: 'font-size: 11px' do
           = image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@fab_space.coordinates}&zoom=13&size=180x180&maptype=roadmap&sensor=false", style: 'margin-top: 10px;'
           View on Google Maps
