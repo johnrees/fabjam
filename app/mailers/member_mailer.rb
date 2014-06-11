@@ -1,5 +1,5 @@
 class MemberMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "notifications@fabjam.org"
 
   def accepted member_id
     @member = Member.find(member_id)
