@@ -20,7 +20,7 @@ class FabSpacesController < InheritedResources::Base
     @fab_space = FabSpace.friendly.find(params[:id])
     current_user.fab_space = @fab_space
     if current_user.save
-      UserMailer.new_applicant(@fab_space.creator.id, current_user.id, @fab_space.id).deliver
+      UserMailer.delay.new_applicant(@fab_space.creator.id, current_user.id, @fab_space.id)
     end
     redirect_to @fab_space
     authorize! :show, @fab_space
