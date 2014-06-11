@@ -62,7 +62,7 @@
         - if @fab_space.members.with_accepted_state.any?
           %h3 Accepted Participants
           %ul.members
-            - @fab_space.members.with_accepted_state.each do |member|
+            - @fab_space.members.includes(:user).with_accepted_state.order('users.first_name ASC').each do |member|
               %li= member.user
 
 

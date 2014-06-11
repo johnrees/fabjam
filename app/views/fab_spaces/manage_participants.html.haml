@@ -13,7 +13,7 @@
       You currently have <strong>#{pluralize @fab_space.members.with_accepted_state.count, "accepted participant"}</strong>
 
     %table.members
-      - @fab_space.members.each do |member|
+      - @fab_space.members.includes(:user).order('users.first_name ASC').each do |member|
         %tr
           %td= member.user
           %td= mail_to member.user.email, member.user.email

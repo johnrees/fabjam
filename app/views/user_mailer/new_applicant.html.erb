@@ -1,0 +1,7 @@
+<%= @creator.first_name %>,
+
+<%= @applicant %> has just applied to participate in the FabJam on Saturday 14th June at <%= @fab_space %>.
+
+Please accept or reject their application here - <%= manage_participants_fab_space_url(@fab_space) %>
+
+If wish to contact <%= @applicant.first_name %> before reviewing their application, their email is <%= @applicant.email %>
