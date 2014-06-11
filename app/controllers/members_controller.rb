@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   def accept
     @member = Member.find(params[:id])
     if @member.accept!
-      MemberMailer.accepted(@member.id).deliver
+      MemberMailer.delay.accepted(@member.id).deliver
       redirect_to :back, notice: 'Member Accepted'
     else
       redirect_to :back, notice: 'There was an error'
@@ -14,7 +14,7 @@ class MembersController < ApplicationController
   def reject
     @member = Member.find(params[:id])
     if @member.reject!
-      MemberMailer.rejected(@member.id).deliver
+      MemberMailer.delay.rejected(@member.id).deliver
       redirect_to :back, notice: 'Member Rejected'
     else
       redirect_to :back, notice: 'There was an error'
