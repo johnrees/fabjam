@@ -9,7 +9,7 @@
       - elsif current_user.member && current_user.member.rejected?
         Sorry, you have been rejected at #{link_to current_user.member.fab_space, current_user.member.fab_space}. Can you apply #{link_to "somewhere else", fab_spaces_path}?
       - elsif current_user.fab_spaces.any?
-        You are managing #{current_user.fab_spaces.map{|f| link_to f, f}.to_sentence}
+        You are managing #{current_user.fab_spaces.map{|f| link_to f, f}.to_sentence.html_safe}
       - else
         To participate on Saturday you need to #{link_to "apply to join a Fab Space", fab_spaces_path} or #{link_to "add a Fab Space", new_fab_space_path}
 
