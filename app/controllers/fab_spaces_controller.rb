@@ -31,6 +31,11 @@ class FabSpacesController < InheritedResources::Base
     authorize! :show, @fab_space
   end
 
+  def manage_participants
+    @fab_space = FabSpace.friendly.find(params[:id])
+    authorize! :update, @fab_space
+  end
+
 private
 
   # def fab_space_params
@@ -38,7 +43,7 @@ private
   # end
 
   def permitted_params
-    params.permit(:fab_space => [:urls, :name, :description, :lat, :lng, :max_participants, :max_organisations, :logo_url, :fablabsio_id, :address, :country_code])
+    params.permit!#(:fab_space => [:urls, :name, :description, :lat, :lng, :max_participants, :max_organisations, :logo_url, :fablabsio_id, :address, :country_code])
   end
 
 end

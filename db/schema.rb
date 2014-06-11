@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521161619) do
+ActiveRecord::Schema.define(version: 20140611155813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140521161619) do
     t.text     "urls"
     t.text     "address"
     t.string   "country_code"
+    t.boolean  "accepting_participants", default: true
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140521161619) do
     t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "workflow_state"
   end
 
   add_index "members", ["fab_space_id"], name: "index_members_on_fab_space_id", using: :btree

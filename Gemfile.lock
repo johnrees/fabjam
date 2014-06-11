@@ -14,6 +14,12 @@ GIT
       orm_adapter
 
 GIT
+  remote: git://github.com/geekq/workflow.git
+  revision: fa1a35eb1746d492955d0a142f8c2bfa07181375
+  specs:
+    workflow (1.2.0)
+
+GIT
   remote: git://github.com/mperham/sidekiq.git
   revision: 44c4654b081b756d6e2722ecb04032b54bc2c172
   specs:
@@ -338,3 +344,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   unicorn
+  workflow!

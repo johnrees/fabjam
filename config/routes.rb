@@ -7,19 +7,28 @@ Rails.application.routes.draw do
 
   resources :organisations
 
-
-
   devise_for :users
   resources :projects
 
+  resources :members do
+    member do
+      get :accept
+      get :reject
+    end
+  end
+
   resources :fab_spaces, path: 'spaces' do
+
     member do
       get :join
       get :leave
+      get :manage_participants
     end
+
     collection do
       get :map
     end
+
   end
 
   %w(about).each do |word|

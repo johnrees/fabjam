@@ -1,0 +1,27 @@
+%ul.breadcrumbs
+  %li= link_to "Home", root_path
+  %li= link_to 'Fab Spaces', fab_spaces_path
+  %li= link_to @fab_space, @fab_space
+  %li.current= link_to 'Manage Participants', manage_participants_fab_space_path
+
+.row
+  .columns.large-12
+    = title "Manage Participants at #{@fab_space}"
+    %p Please contact the people who applied for your lab below, and then either approve or reject their application to work on projects at #{@fab_space} on Saturday, 14th June.
+
+    .panel
+      You currently have <strong>#{pluralize @fab_space.members.with_accepted_state.count, "accepted participant"}</strong>
+
+    %table.members
+      - @fab_space.members.each do |member|
+        %tr
+          %td= member.user
+          %td= mail_to member.user.email, member.user.email
+          - if member.accepted?
+            %td.action= link_to "Accepted", "#", class: 'button success disabled'
+          - else
+            %td.action= link_to "Accept", accept_member_path(member), class: 'button success'
+          - if member.rejected?
+            %td.action= link_to "Rejected", "#", class: 'button alert disabled'
+          - else
+            %td.action= link_to "Reject", reject_member_path(member), class: 'button alert'

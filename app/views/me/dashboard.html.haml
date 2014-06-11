@@ -2,17 +2,34 @@
 .row
   .columns.large-12
     %h1 Hello #{current_user.first_name}
+
+    .panel
+      - if current_user.member && current_user.member.accepted?
+        Congratulations! You have been accepted at #{link_to current_user.member.fab_space, current_user.member.fab_space}!
+      - elsif current_user.member && current_user.member.rejected?
+        Sorry, you have been rejected at #{link_to current_user.member.fab_space, current_user.member.fab_space}. Can you apply #{link_to "somewhere else", fab_spaces_path}?
+      - elsif current_user.fab_spaces.any?
+        You are managing #{current_user.fab_spaces.map{|f| link_to f, f}.to_sentence}
+      - else
+        To participate on Saturday you need to #{link_to "apply to join a Fab Space", fab_spaces_path} or #{link_to "add a Fab Space", new_fab_space_path}
+
     %p What would you like to do?
+
+    -# - if current_user.fab_spaces.any?
+    -#   %ul#my-fab-spaces
+    -#     - current_user.fab_spaces.each do |fab_space|
+    -#       %li= link_to fab_space, fab_space
 
     %ul#dashboard-options
       - if can? :create, Post
         %li= link_to "Write a Blog Post", new_post_path, class: 'button'
+
       - if can? :create, FabSpace
         %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
 
-      - unless current_user.fab_space
+      - if can? :join, FabSpace
         %li= link_to "Join a Fab Space", fab_spaces_path, class: 'button'
-      - else
+      - elsif current_user.fab_spaces.empty?
         %li= link_to "Go to '#{current_user.fab_space}'", current_user.fab_space, class: 'button'
 
       %li= link_to "Edit your Details", edit_user_registration_path, class: 'button'

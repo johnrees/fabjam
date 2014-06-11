@@ -5,22 +5,40 @@
 
 .row
   .columns.large-12
-    = title @fab_space
+
+    - if can? :join, @fab_space and !@fab_space.accepting_participants?
+      .panel This Fab Space is not currently accepting any more participants
 
     .row{style: 'margin-bottom: 20px'}
       .columns.large-2
-        = image_tag @fab_space.logo_url
-        -# = image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@fab_space.coordinates}&zoom=13&size=180x180&maptype=roadmap&sensor=false"
+        - if @fab_space.logo_url.present?
+          = image_tag @fab_space.logo_url
+        = link_to "https://www.google.com/maps/search/#{@fab_space.coordinates}", style: 'font-size: 11px' do
+          = image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@fab_space.coordinates}&zoom=13&size=180x180&maptype=roadmap&sensor=false", style: 'margin-top: 10px;'
+          View on Google Maps
 
       .columns.large-10
-        - if can? :manage, @fab_space
+
+        = title @fab_space
+        - if can? :update, @fab_space
           = link_to "Edit", edit_fab_space_path(@fab_space), class: 'button'
+          = link_to "Manage Participants (#{@fab_space.members.count})", manage_participants_fab_space_path, class: 'button'
 
         - if current_user
           - if current_user.joined? @fab_space
-            = link_to "Leave this Fab Space", leave_fab_space_path(@fab_space), class: 'button'
+            - if current_user.member.accepted?
+              = link_to "You have been accepted at this Fab Space", '#', class: 'button disabled success'
+            - elsif current_user.member.rejected?
+              = link_to "Sorry, you have been rejected at this Fab Space", '#', class: 'button disabled alert'
+            - else
+              = link_to "Remove your application to join this Fab Space", leave_fab_space_path(@fab_space), class: 'button alert'
           - else
-            = link_to "Apply to join this Fab Space", join_fab_space_path(@fab_space), class: 'button pink'
+            - if current_user.member and current_user.member.accepted?
+              = link_to "You have been accepted at '#{current_user.member.fab_space}'", current_user.member.fab_space, class: 'button disabled alert'
+            - elsif current_user != @fab_space.creator
+              - if @fab_space.accepting_participants? and can? :join, @fab_space
+                = link_to "Apply to join this Fab Space", join_fab_space_path(@fab_space), class: 'button pink'
+
 
         .fab-space-description= simple_format @fab_space.description
 
@@ -28,11 +46,24 @@
       - @fab_space.links.each do |link|
         %li= link_to link, link
 
-    - if @fab_space.members.any?
-      #h3 Applied to Join
-      %ul.members
-        - @fab_space.members.each do |member|
-          %li= member.user
+    .row
+
+      .columns.large-4
+        %h3 Fab Space Address
+        = simple_format @fab_space.address
+
+      .columns.large-4
+        %h3 Organiser
+        = @fab_space.creator
+        %br/
+        = mail_to @fab_space.creator.email, @fab_space.creator.email
+
+      .columns.large-4
+        - if @fab_space.members.with_accepted_state.any?
+          %h3 Accepted Participants
+          %ul.members
+            - @fab_space.members.with_accepted_state.each do |member|
+              %li= member.user
 
 
 -# .stripe

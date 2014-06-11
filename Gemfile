@@ -57,6 +57,7 @@ gem 'simple_form'
 gem 'active_model_serializers'
 gem 'sidekiq', github: 'mperham/sidekiq'
 gem "capistrano-sidekiq"
+gem 'workflow', github: 'geekq/workflow'
 
 group :test, :development do
   gem 'letter_opener'
