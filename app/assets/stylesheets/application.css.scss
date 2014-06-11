@@ -27,6 +27,20 @@
 @import "bourbon";
 @include font-face(BebasNeue, "bebasneue_regular_macroman/BebasNeue-webfont", normal, $asset-pipeline: true);
 
+.flash-message {
+  display: block;
+  padding: 8px;
+  text-align: center;
+  &#alert {
+    background: #F63337;
+    color: #FFF;
+  }
+  &#notice {
+    background: #1A9D61;
+    color: #FFF;
+  }
+}
+
 * {
   margin: 0;
 }

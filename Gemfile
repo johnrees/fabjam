@@ -59,6 +59,7 @@ gem 'sidekiq', github: 'mperham/sidekiq'
 gem "capistrano-sidekiq"
 
 group :test, :development do
+  gem 'letter_opener'
   gem 'minitest'
   gem 'rspec-rails'
   gem 'factory_girl_rails'

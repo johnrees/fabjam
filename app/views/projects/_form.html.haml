@@ -5,6 +5,6 @@
         %legend Project Details
         = f.input :name, label: 'Project Name'
         = f.association :fab_space
-        = f.input :cover_image
+        = f.input :cover_image, input_html: { class: 'fp', data: { fp_store_location: 'S3', fp_store_path: "uploads/images/projects/", fp_store_container: ENV['S3_BUCKET'] } }
         = f.input :description
       = f.submit class: 'button'

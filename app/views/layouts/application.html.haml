@@ -52,7 +52,11 @@
 
       -# <p class="notice"><haml_loud> notice </haml_loud></p>
       -# <p class="alert"><haml_loud> alert </haml_loud></p>
-      #main= yield
+      #main
+        - flash.each do |key, msg|
+          = content_tag :div, msg, id: key, class: 'flash-message'
+
+        = yield
       #push
 
   %footer
