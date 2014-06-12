@@ -8,8 +8,10 @@ gem 'redactor-rails', github: 'SammyLin/redactor-rails'
 gem 'bourbon'
 gem 'countries'
 gem 'sinatra', '>= 1.3.0', :require => nil
-
+gem 'hackpad-cli'
 gem "airbrake"
+gem "google-instant-hangouts"
+gem "timezone"
 
 gem 'country_select'
 gem 'rolify', github: 'EppO/rolify'

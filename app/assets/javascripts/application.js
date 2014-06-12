@@ -19,6 +19,7 @@
 //= require leaflet
 //= require jquery.nouislider.min
 //= require selectize
+//= require google-instant-hangouts
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

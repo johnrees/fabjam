@@ -11,6 +11,7 @@
     <script src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
     = javascript_include_tag "application"
     = csrf_meta_tags
+
   %body{class: "a-#{action_name}"}
     #wrapper
       %header
@@ -57,6 +58,7 @@
           = content_tag :div, msg, id: key, class: 'flash-message'
 
         = yield
+
       #push
 
   %footer
