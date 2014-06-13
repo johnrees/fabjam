@@ -27,12 +27,6 @@
 @import "bourbon";
 @include font-face(BebasNeue, "bebasneue_regular_macroman/BebasNeue-webfont", normal, $asset-pipeline: true);
 
-
-ul.breadcrumbs {
-  max-width: 980px;
-  margin: 3px auto;
-}
-
 .flash-message {
   display: block;
   padding: 8px;
@@ -234,9 +228,18 @@ header {
   }
 }
 
-.breadcrumbs, .panel {
+.panel {
   border: none;
   background: #F6f6f6;
+}
+
+.breadcrumbs {
+  max-width: 960px;
+  margin: 3px auto;
+  border: none;
+  background: none;
+  text-shadow: 2px 2px 1px #FFF;
+  font-weight: bold;
 }
 
 .count {
