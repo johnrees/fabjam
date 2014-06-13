@@ -3,7 +3,7 @@ class ProjectsController < InheritedResources::Base
   defaults resource_class: Project.friendly
 
   def index
-    @projects = Project.find_by_year(params[:year] || 2014)
+    @projects = Project.where(year: (params[:year] || 2014)).order(name: :asc)
   end
 
 private

@@ -6,6 +6,7 @@ class Ability
     user ||= User.new
 
     can :read, Post
+    can :read, Project
 
     if user.fab_spaces.empty?
       unless user.member
@@ -17,6 +18,7 @@ class Ability
     can :accept, Member do |member|
       member.fab_space.creator == user
     end
+
     can :reject, Member do |member|
       member.fab_space.creator == user
     end
