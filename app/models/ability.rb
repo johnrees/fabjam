@@ -28,7 +28,7 @@ class Ability
     can :leave, FabSpace
     can :update, User, id: user.id
     can :manage, :all if user.has_role? :superadmin
-    cannot :manage, Project
+    cannot :manage, Project unless user.has_role? :everything
 
     can :read, Project
 

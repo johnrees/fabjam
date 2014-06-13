@@ -25,7 +25,8 @@
         %h1= @project
       .columns.large-3
         %ul.button-group{style: 'float: right'}
-          %li= link_to "View Project", @project.url
+          - if @project.url.present?
+            %li= link_to "Visit Project", @project.url, class: 'button'
           -# - if can? :update, @project
           -#   %li= link_to "Edit Project", edit_project_path(@project), class: 'button'
           -# - if can? :destroy, @project
