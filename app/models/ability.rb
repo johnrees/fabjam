@@ -27,8 +27,9 @@ class Ability
     can :manage_participants, FabSpace, creator: user
     can :leave, FabSpace
     can :update, User, id: user.id
+    can :manage, Project, creator: user
     can :manage, :all if user.has_role? :superadmin
-    cannot :manage, Project unless user.has_role? :everything
+    # cannot :manage, Project unless user.has_role? :everything
 
     can :read, Project
 

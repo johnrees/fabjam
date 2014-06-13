@@ -3,11 +3,12 @@
     = simple_form_for project do |f|
       %fieldset
         %legend Project Details
-        = f.input :name, label: 'Project Name'
-        = f.input :year, collection: [2014, 2013], include_blank: false
-        = f.input :url
+        - if project.new_record?
+          = f.input :name, label: 'Project Name'
+        -# = f.input :year, collection: [2014, 2013], include_blank: false
+        -# = f.input :url
         -# = f.input :created_at, default: Time.now - 1.year
         = f.association :fab_space
         = f.input :cover_image, input_html: { class: 'fp', data: { fp_store_location: 'S3', fp_store_path: "uploads/images/projects/", fp_store_container: ENV['S3_BUCKET'] } }
-        = f.input :description
+        = f.input :description, hint: 'A very brief description of your project, it can be changed later'
       = f.submit class: 'button'

@@ -14,6 +14,13 @@ class Project < ActiveRecord::Base
     name
   end
 
+  def google_drive_id
+    begin
+      drive_url.scan(/(.*)id=(.*)&(.*)/).flatten[1]
+    rescue
+    end
+  end
+
   # def year
   #   created_at.year
   # end

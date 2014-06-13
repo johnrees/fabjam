@@ -12,6 +12,7 @@ gem 'hackpad-cli'
 gem "airbrake"
 gem "google-instant-hangouts"
 gem "timezone"
+gem 'google_drive', github: 'gimite/google-drive-ruby'
 
 gem 'country_select'
 gem 'rolify', github: 'EppO/rolify'
