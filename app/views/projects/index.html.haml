@@ -3,21 +3,21 @@
   %li= link_to "Projects", projects_path
   %li.current= link_to (params[:year] || 2014), projects_path
 
-.row
+.row.projects
   .columns.large-12
     .row
       .columns.large-5
         %h1 Projects
       .columns.large-7
         %ul.button-group{style: 'float: right; margin-top: 10px;'}
-          %li= link_to "2014 (Current Projects)", projects_path(year: 2014), class: 'button'
-          %li= link_to "2013", projects_path(year: 2013), class: 'button'
+          %li{class: ('active' if params[:year] != '2013')}= link_to "2014", projects_path(year: 2014), class: 'button'
+          %li{class: ('active' if params[:year] == '2013')}= link_to "2013", projects_path(year: 2013), class: 'button'
   .columns.large-12
     .panel
       - if params[:year] == '2014'
-        %p This year the theme is <strong>consectetur adipisicing</strong> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+        %p This year the theme is <strong>‘Mobiquity’</strong> #opensource #mobility #ubiquity #equity #AR #VR #hereandthere! Participants will be able to add projects on this page during the FabJam on Saturday 14th June.
       - else
-        %p Last year the theme was <strong>dolor sit amet</strong>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        %p Last year the theme was <strong>Urban Farming</strong>. There were projects from Fab Spaces all over the world.
 
     %ul.large-block-grid-4= render @projects
 

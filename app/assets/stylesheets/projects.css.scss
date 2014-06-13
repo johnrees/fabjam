@@ -1,3 +1,18 @@
+.projects {
+
+  ul.button-group a {
+    background: #FFF !important;
+    color: #BBB;
+    &:hover {
+      color: #999;
+    }
+  }
+  li.active a {
+    background: #FF00FF !important;
+    color: #FFF !important;
+  }
+
+}
 .project {
   display: inline-block;
   float: left;

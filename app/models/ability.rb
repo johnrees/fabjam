@@ -6,7 +6,6 @@ class Ability
     user ||= User.new
 
     can :read, Post
-    can :read, Project
 
     if user.fab_spaces.empty?
       unless user.member
@@ -29,6 +28,9 @@ class Ability
     can :leave, FabSpace
     can :update, User, id: user.id
     can :manage, :all if user.has_role? :superadmin
+    cannot :manage, Project
+
+    can :read, Project
 
   end
 end
