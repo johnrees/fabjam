@@ -24,3 +24,5 @@ namespace :figaro do
 end
 after "deploy:setup", "figaro:setup"
 after "deploy:finalize_update", "figaro:symlink"
+
+
