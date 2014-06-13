@@ -28,6 +28,11 @@
 @include font-face(BebasNeue, "bebasneue_regular_macroman/BebasNeue-webfont", normal, $asset-pipeline: true);
 
 
+ul.breadcrumbs {
+  max-width: 980px;
+  margin: 3px auto;
+}
+
 .flash-message {
   display: block;
   padding: 8px;
@@ -50,6 +55,10 @@ html, body {
   height: 100%;
 }
 
+.f-topbar-fixed {
+  padding-top: 70px !important;
+}
+
 #wrapper {
   min-height: 100%;
   height: auto !important;
@@ -61,6 +70,26 @@ footer, #push {
   margin: 0 !important;
   padding: 0 !important;
   height: 270px !important; /* '.push' must be the same height as 'footer' */
+}
+footer {
+  border: none !important;
+  a {
+    line-height: 0.9em;
+    font-size: 0.9em;
+    color: #DDD;
+  }
+  .stripe {
+    background: #222;
+    border: none;
+  }
+  h1,h2,h3 {
+    color: #FFF;
+    text-transform: uppercase;
+  }
+  ul,li {
+    margin-left: 0;
+    padding-left: 0;
+  }
 }
 
 .button-group a.button {
@@ -101,20 +130,7 @@ footer, #push {
 }
 
  * { box-sizing: border-box }
-footer {
-  .stripe {
-    background: #222;
-    border: none;
-  }
-  h1,h2,h3 {
-    color: #FFF;
-    text-transform: uppercase;
-  }
-  ul,li {
-    margin-left: 0;
-    padding-left: 0;
-  }
-}
+
 
 ul#dashboard-options {
   list-style: none;
@@ -271,15 +287,6 @@ input#search-box {
   font-size: 15px;
   padding: 13px 4px;
   margin-top: 6px;
-}
-
-footer {
-  border: none !important;
-  a {
-    line-height: 0.9em;
-    font-size: 0.9em;
-    color: #DDD;
-  }
 }
 
 #logo {
