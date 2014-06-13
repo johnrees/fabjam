@@ -3,11 +3,11 @@ class ProjectsController < InheritedResources::Base
   defaults resource_class: Project.friendly
 
   def create
-    @project = current_user.projects.new permitted_params
+    @project = current_user.projects.new params[:project].permit!
     if @project.save
       session = GoogleDrive.login(ENV['GOOGLE_DRIVE_USER'], ENV['GOOGLE_DRIVE_PASS'])
-      parent = session.root_collection.subcollection_by_title(@project.name)
-      collection = parent.create_subcollection(@project.id)
+      parent = session.root_collection.subcollection_by_title('2014')
+      collection = parent.create_subcollection(@project.name)
       begin
         collection.acl.push({:scope_type => "default", :with_key => true, :role => "writer"})
       rescue
@@ -27,7 +27,8 @@ class ProjectsController < InheritedResources::Base
 private
 
   def permitted_params
-    params[:project].permit!#(:project => [:name, :description,:fab_space_id, :cover_image])
+    params.permit!
+    #(:project => [:name, :description,:fab_space_id, :cover_image])
   end
 
 end
