@@ -38,6 +38,8 @@
     = simple_format(@project.description)
     = image_tag @project.cover_image, style: 'margin-bottom: 20px; width: 100%;'
 
+
+
     - if can? :manage, @project
       = link_to 'Edit Project', edit_project_path(@project), class: 'button'
       = link_to 'Go to Google Drive Folder', @project.drive_url, class: 'button', target: '_blank'
