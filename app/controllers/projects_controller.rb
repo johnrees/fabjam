@@ -15,6 +15,7 @@ class ProjectsController < InheritedResources::Base
       @project.drive_url = collection.human_url
       @project.save
       redirect_to @project
+
     else
       render :new
     end
