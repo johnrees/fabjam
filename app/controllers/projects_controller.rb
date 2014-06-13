@@ -9,7 +9,7 @@ class ProjectsController < InheritedResources::Base
 private
 
   def permitted_params
-    params.permit(:project => [:name, :description,:fab_space_id, :cover_image])
+    params.permit!#(:project => [:name, :description,:fab_space_id, :cover_image])
   end
 
 end
