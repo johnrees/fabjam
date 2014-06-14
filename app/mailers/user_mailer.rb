@@ -8,4 +8,10 @@ class UserMailer < ActionMailer::Base
     mail to: @creator.email, subject: "#{@applicant} has applied to participate at #{@fab_space}"
   end
 
+  def new_project project_id
+    @project = Project.find(project_id)
+    @creator = @project.creator
+    mail to: @creator.email, subject: "#{@project} has been created"
+  end
+
 end

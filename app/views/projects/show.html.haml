@@ -48,7 +48,7 @@
           = image_tag "loader.gif"
           Creating Project Folder...
           :javascript
-            setTimeout(function(){window.location.reload(true);},2000);
+            setTimeout(function(){window.location.reload(true);},4000);
       - else
         - if can? :manage, @project
           = link_to 'Go to Google Drive Folder', @project.drive_url, class: 'button', target: '_blank'

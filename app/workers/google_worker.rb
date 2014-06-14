@@ -13,6 +13,7 @@ class GoogleWorker
     rescue
     end
     @project.update_attribute(:drive_url, collection.human_url)
+    UserMailer.delay.new_project(@project)
   end
 
 end
