@@ -42,7 +42,7 @@
       = link_to 'Delete Project', @project, method: :delete, data: { confirm: "Are you sure you want to delete this project?" }, class: 'button alert'
     .row
       .columns.large-9
-        = simple_format(@project.description)
+        = @project.description.html_safe
       .columns.large-3.side
         - if @project.fab_spaces.any?
           %h3 Fab Spaces
