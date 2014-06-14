@@ -20,25 +20,32 @@
     -#     - current_user.fab_spaces.each do |fab_space|
     -#       %li= link_to fab_space, fab_space
 
-    %ul#dashboard-options
-      - if can? :create, Post
-        %li= link_to "Write a Blog Post", new_post_path, class: 'button'
+    .row
+      .columns.large-6
 
-      - if can? :create, FabSpace
-        %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
+        %ul#dashboard-options
 
-      - if can? :join, FabSpace
-        %li= link_to "Join a Fab Space", fab_spaces_path, class: 'button'
-      - elsif current_user.fab_spaces.empty?
-        %li= link_to "Go to '#{current_user.fab_space}'", current_user.fab_space, class: 'button'
+          - if can? :create, Post
+            %li= link_to "Write a Blog Post", new_post_path, class: 'button'
 
-      %li= link_to "Edit your Details", edit_user_registration_path, class: 'button'
+          - if can? :create, FabSpace
+            %li= link_to "Add a Fab Space", new_fab_space_path, class: 'button'
 
-      %li= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button alert'
+          - if can? :join, FabSpace
+            %li= link_to "Join a Fab Space", fab_spaces_path, class: 'button'
+          - elsif current_user.fab_spaces.empty?
+            %li= link_to "Go to '#{current_user.fab_space}'", current_user.fab_space, class: 'button'
 
-      %li
-        %h5 Coming Soon...
-      %li= link_to "Start a Project", '#', class: 'button disabled'
-      %li= link_to "Join a Project", '#', class: 'button disabled'
-      %li= link_to "Add an Organisation", '#', class: 'button disabled'
+          %li= link_to "Edit your Details", edit_user_registration_path, class: 'button'
 
+      .columns.large-6
+        %h3 My Projects
+        %ul
+          - current_user.projects.each do |project|
+            %li= link_to project, project
+
+        - if can? :create, Project
+          = link_to "Start a New Project", new_project_path, class: 'button'
+          -# = link_to "Join an Existing Project", projects_path, class: 'button'
+
+    = link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button alert'
