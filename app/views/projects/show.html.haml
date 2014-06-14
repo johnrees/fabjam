@@ -38,19 +38,27 @@
     = simple_format(@project.description)
     = image_tag @project.cover_image, style: 'margin-bottom: 20px; width: 100%;'
 
-
-
     - if can? :manage, @project
       = link_to 'Edit Project', edit_project_path(@project), class: 'button'
-      = link_to 'Go to Google Drive Folder', @project.drive_url, class: 'button', target: '_blank'
 
-    - if @project.google_drive_id.present?
-      %dl.tabs{"data-tab" => ""}
-        %dd.tab-title.active= link_to fa_icon("list", text: "List View").html_safe, "#list-view"
-        %dd.tab-title= link_to fa_icon("th", text: "Grid View").html_safe, "#grid-view"
 
-      .tabs-content
-        .content.active#list-view
-          %iframe{src: "https://drive.google.com/embeddedfolderview?id=#{@project.google_drive_id}#list", width: '100%', height: 340, frameborder: 0}
-        .content#grid-view
-          %iframe{src: "https://drive.google.com/embeddedfolderview?id=#{@project.google_drive_id}#grid", width: '100%', height: 340, frameborder: 0}
+    - if @project.year > 2013
+      - if !@project.drive_url?
+        %p
+          = image_tag "loader.gif"
+          Creating Project Folder...
+          :javascript
+            setTimeout(function(){window.location.reload(true);},2000);
+      - else
+        - if can? :manage, @project
+          = link_to 'Go to Google Drive Folder', @project.drive_url, class: 'button', target: '_blank'
+
+        - if @project.google_drive_id.present?
+          %dl.tabs{"data-tab" => ""}
+            %dd.tab-title.active= link_to fa_icon("list", text: "List View").html_safe, "#list-view"
+            %dd.tab-title= link_to fa_icon("th", text: "Grid View").html_safe, "#grid-view"
+          .tabs-content
+            .content.active#list-view
+              %iframe{src: "https://drive.google.com/embeddedfolderview?id=#{@project.google_drive_id}#list", width: '100%', height: 340, frameborder: 0}
+            .content#grid-view
+              %iframe{src: "https://drive.google.com/embeddedfolderview?id=#{@project.google_drive_id}#grid", width: '100%', height: 340, frameborder: 0}
