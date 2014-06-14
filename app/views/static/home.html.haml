@@ -39,7 +39,7 @@
     -#   = link_to "View All Fab Spaces >", fab_spaces_path, class: 'view-all'
 
     #latest-projects
-      .title.disabled Latest Projects
+      .title Latest Projects
       %ul.large-block-grid-4= render Project.order('id DESC').limit(3)
 
     #latest-news
