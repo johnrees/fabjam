@@ -33,13 +33,25 @@
           -#   %li= link_to "Delete Project", project_path(@project), method: :delete, confirm: 'Are you sure you want to delete this project?', class: 'button alert'
 
   .columns.large-12
-    .project-fab-space
-      -# %p Created by #{link_to "Neil", "#"} and #{link_to "Chris", "#"} at #{link_to @project.fab_space, @project.fab_space}
-    = simple_format(@project.description)
-    = image_tag @project.cover_image, style: 'margin-bottom: 20px; width: 100%;'
 
     - if can? :manage, @project
+
       = link_to 'Edit Project', edit_project_path(@project), class: 'button'
+      = link_to 'Delete Project', @project, method: :delete, data: { confirm: "Are you sure you want to delete this project?" }, class: 'button alert'
+    .row
+      .columns.large-9
+        = simple_format(@project.description)
+      .columns.large-3.side
+        - if @project.fab_spaces.any?
+          %h3 Fab Spaces
+          %ul
+            - @project.fab_spaces.order(name: :asc).each do |fab_space|
+              %li= link_to fab_space, fab_space
+        - if @project.collaborators.present?
+          %h3 People
+          = simple_format @project.collaborators
+    = image_tag @project.cover_image, style: 'margin-bottom: 20px; width: 100%;'
+
 
 
     - if @project.year > 2013
@@ -62,3 +74,9 @@
               %iframe{src: "https://drive.google.com/embeddedfolderview?id=#{@project.google_drive_id}#list", width: '100%', height: 340, frameborder: 0}
             .content#grid-view
               %iframe{src: "https://drive.google.com/embeddedfolderview?id=#{@project.google_drive_id}#grid", width: '100%', height: 340, frameborder: 0}
+
+          - if can? :manage, @project
+            %p
+              Share this URL
+              %input{type: 'text', value: @project.drive_url, style: 'margin: 5px 0'}
+              with friends who you want to collaborate with you.

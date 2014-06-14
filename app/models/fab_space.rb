@@ -4,7 +4,8 @@ class FabSpace < ActiveRecord::Base
   belongs_to :fab_space
   has_many :members
   has_many :users, through: :members
-  has_many :projects
+  # has_many :projects
+  has_and_belongs_to_many :projects
 
   validates_presence_of :name, :description, :max_participants, :address, :country_code
   validates_numericality_of :max_participants, greater_than: 0

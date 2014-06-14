@@ -20,6 +20,7 @@
 //= require jquery.nouislider.min
 //= require selectize
 //= require google-instant-hangouts
+//= require selectize
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

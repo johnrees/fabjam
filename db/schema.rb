@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613152635) do
+ActiveRecord::Schema.define(version: 20140614031409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20140613152635) do
     t.string   "country_code"
     t.boolean  "accepting_participants", default: true
   end
+
+  create_table "fab_spaces_projects", force: true do |t|
+    t.integer  "fab_space_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fab_spaces_projects", ["fab_space_id"], name: "index_fab_spaces_projects_on_fab_space_id", using: :btree
+  add_index "fab_spaces_projects", ["project_id"], name: "index_fab_spaces_projects_on_project_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -93,9 +103,11 @@ ActiveRecord::Schema.define(version: 20140613152635) do
     t.datetime "updated_at"
     t.string   "cover_image"
     t.string   "slug"
-    t.integer  "year",         default: 2014
+    t.integer  "year",          default: 2014
     t.string   "url"
     t.string   "drive_url"
+    t.string   "blurb"
+    t.text     "collaborators"
   end
 
   add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true, using: :btree

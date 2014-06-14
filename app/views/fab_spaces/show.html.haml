@@ -56,7 +56,8 @@
         %h3 Organiser
         = @fab_space.creator
         %br/
-        = mail_to @fab_space.creator.email, @fab_space.creator.email
+        - if @fab_space.creator and @fab_space.creator.email.present?
+          = mail_to @fab_space.creator.email, @fab_space.creator.email
 
       .columns.large-4
         - if @fab_space.members.with_accepted_state.any?
@@ -66,12 +67,13 @@
               %li= member.user
 
 
--# .stripe
--#   .row
--#     .columns.large-12
--#       %dl.sub-nav
--#         %dt Projects by Year:
--#         %dd.active= link_to "2014", "#"
--#         %dd= link_to "2013", "#"
--#       %ul.large-block-grid-4.fab-space-projects= render @fab_space.projects
+
+      - if @fab_space.projects.any?
+        .columns.large-12
+          %h3 Projects
+          %dl.sub-nav
+            -# %dt Projects
+            -# %dd.active= link_to "2014", "#"
+            -# %dd= link_to "2013", "#"
+          %ul.large-block-grid-4.fab-space-projects= render @fab_space.projects
 

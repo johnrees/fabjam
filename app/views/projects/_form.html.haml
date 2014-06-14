@@ -3,12 +3,13 @@
     = simple_form_for project do |f|
       %fieldset
         %legend Project Details
-        - if project.new_record?
-          = f.input :name, label: 'Project Name'
+        = f.input :name, label: 'Project Name'
         -# = f.input :year, collection: [2014, 2013], include_blank: false
         -# = f.input :url
         -# = f.input :created_at, default: Time.now - 1.year
-        = f.association :fab_space, collection: FabSpace.order(name: :asc).map{|f| [f.id, f.name]}
+        = f.association :fab_spaces
         = f.input :cover_image, input_html: { class: 'fp', data: { fp_store_location: 'S3', fp_store_path: "uploads/images/projects/", fp_store_container: ENV['S3_BUCKET'] } }
-        = f.input :description, hint: 'A very brief description of your project, it can be changed later'
+        = f.input :blurb, hint: 'The blurb is a very brief description of your project, it can be changed later'
+        = f.input :description, input_html: { class: 'redactor', rows: 20, cols: 100 }
+        = f.input :collaborators, hint: 'Who is working on this project?', input_html: { rows: 5}, placeholder: 'Joe Bloggs - 3D Engine Design'
       = f.submit class: 'button'

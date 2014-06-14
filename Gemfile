@@ -13,7 +13,7 @@ gem "airbrake"
 gem "google-instant-hangouts"
 gem "timezone"
 gem 'google_drive', github: 'gimite/google-drive-ruby'
-
+gem "selectize-rails"
 gem 'country_select'
 gem 'rolify', github: 'EppO/rolify'
 gem 'rails', '4.1.0'

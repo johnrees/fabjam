@@ -6,6 +6,8 @@ class Project < ActiveRecord::Base
   belongs_to :creator, class_name: 'User'
   belongs_to :fab_space
 
+  has_and_belongs_to_many :fab_spaces
+
   # validates_presence_of :name, :description, :fab_space
 
   scope :find_by_year, lambda{ |year| where('extract(year from created_at) = ?', year)}
