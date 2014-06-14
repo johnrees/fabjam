@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     redirect_to :back, alert: "Sorry, you can't do that"
   end
 
-  rescue ActiveRecord::RecordNotFound do |exception|
+  rescue_from ActiveRecord::RecordNotFound do |exception|
     redirect_to root_url, alert: "Sorry, that page was not found"
   end
 
