@@ -37,6 +37,8 @@
     - if can? :manage, @project
 
       = link_to 'Edit Project', edit_project_path(@project), class: 'button'
+      - if @project.drive_url.present?
+          = link_to 'Go to Google Drive Folder', @project.drive_url, class: 'button', target: '_blank'
       = link_to 'Delete Project', @project, method: :delete, data: { confirm: "Are you sure you want to delete this project?" }, class: 'button alert'
     .row
       .columns.large-9
@@ -48,7 +50,7 @@
             - @project.fab_spaces.order(name: :asc).each do |fab_space|
               %li= link_to fab_space, fab_space
         - if @project.collaborators.present?
-          %h3 People
+          %h3 Collaborators
           = simple_format @project.collaborators
     = image_tag @project.cover_image, style: 'margin-bottom: 20px; width: 100%;'
 

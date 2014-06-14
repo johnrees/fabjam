@@ -40,8 +40,7 @@
 
     #latest-projects
       .title.disabled Latest Projects
-      %h3 Coming Soon
-      %br/
+      %ul.large-block-grid-4= render Project.order('id DESC').limit(3)
 
     #latest-news
       .title Latest News
