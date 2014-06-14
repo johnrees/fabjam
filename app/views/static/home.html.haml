@@ -8,27 +8,27 @@
         %br/
         It aims to connect fabspaces together and fabspaces<br/> to their local community of users and companies. #{link_to "find out more", about_path}
 
+      %h3 FABJAM 2014 America LIVESTREAM!
+      .flex-video
+        <iframe width="420" height="315" src="http://www.youtube.com/embed/AzRM-N7tKrA" frameborder="0" allowfullscreen></iframe>
+
+      %h3 Saturday's FABJAM 2014 Europe Recorded Streams
       .row
         .columns.large-6
-          %h3 FABJAM 2014 Europe Livestreams
-
-          .flex-video
-            <iframe width="420" height="315" src="http://www.youtube.com/embed/KI3MQE361MI" frameborder="0" allowfullscreen></iframe>
-          %h3{style: 'margin: 0'} PART II
+          %h3{style: 'margin: 0'} PART I
           .flex-video
             <iframe width="420" height="315" src="http://www.youtube.com/embed/aK3pFiMHlPQ" frameborder="0" allowfullscreen></iframe>
-          %h3{style: 'margin: 0'} PART I
         .columns.large-6
-          %h3 FABJAM 2014 America Livestream
+          %h3{style: 'margin: 0'} PART II
           .flex-video
-            <iframe width="420" height="315" src="http://www.youtube.com/embed/AzRM-N7tKrA" frameborder="0" allowfullscreen></iframe>
+            <iframe width="420" height="315" src="http://www.youtube.com/embed/KI3MQE361MI" frameborder="0" allowfullscreen></iframe>
+      %p <a href="#" data-reveal-id="myModal" class="watch">Watch Last Year's Video</a>
 
       <a class="twitter-timeline" href="https://twitter.com/theFabJam" data-widget-id="477821729914376192">Tweets by @theFabJam</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
 
-      %p <a href="#" data-reveal-id="myModal" class="watch">Watch Last Year's Video</a>
 
     - unless current_user
       #join-us
