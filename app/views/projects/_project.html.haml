@@ -3,6 +3,7 @@
     .inner
       .project-thumbnail= image_tag project.cover_image
       .project-name= project
-      - if project.fab_space.present?
-        .project-fab-space= link_to project.fab_space, project.fab_space
+      - if project.fab_spaces.any?
+        .project-fab-space
+          = project.fab_spaces.order(name: :asc).map{|f| link_to(f, f) }.to_sentence.html_safe
       .project-description= project.blurb
