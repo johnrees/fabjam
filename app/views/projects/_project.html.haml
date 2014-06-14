@@ -6,4 +6,5 @@
       - if project.fab_spaces.any?
         .project-fab-space
           = project.fab_spaces.order(name: :asc).map{|f| link_to(f, f) }.to_sentence.html_safe
-      .project-description= project.blurb
+      .project-description
+        %p= project.blurb
