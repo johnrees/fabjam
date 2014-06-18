@@ -13,7 +13,7 @@ class ProjectsController < InheritedResources::Base
   end
 
   def index
-    @projects = Project.where(year: (params[:year] || 2014)).order(name: :asc)
+    @projects = Project.where(year: (params[:year] || 2014)).order(id: :desc)
   end
 
 private
