@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   belongs_to :creator, class_name: 'User'
-  belongs_to :fab_space
+  # belongs_to :fab_space
 
   has_and_belongs_to_many :fab_spaces
 
