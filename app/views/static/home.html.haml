@@ -62,6 +62,10 @@
       .title Latest Projects
       %ul.large-block-grid-4= render Project.order('id DESC').limit(4)
 
+    #fab-spaces
+      .title Participating Fab Spaces
+      #map
+
     #latest-news
       .title Latest News
       %ul#latest-news.large-block-grid-3= render @posts
